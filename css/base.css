@@ -1,0 +1,89 @@
+/* CSS Document */
+@import url(http://fonts.googleapis.com/css?family=Arimo:400,700);
+*{
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Arimo', sans-serif;
+	letter-spacing:1.0px;
+    border: 0px;
+    color: #444;
+}
+
+
+
+#wrapper{
+	width: 1024px;
+	margin: 70px auto 0 auto;
+	background-color: #F5F5F5;
+	padding: 10px 0 10px 0;
+}
+
+
+#login_style{
+	width: 360px;
+	height: 355px;
+	margin: 50px auto 0 auto;
+}
+
+form{
+	border-radius:3px;
+}
+
+#main_nav{
+	clear:both;
+	height: 65px;
+	width: 2000px;
+	background-color:#000;
+	color:#F5F5F5;
+	font-size:21px;
+	line-height: 2.5em;
+	margin:0px;
+
+}
+
+td:nth-child(1){
+    width: 400px;
+}
+td:nth-child(2){
+    width: 800px;
+    margin: 0 auto; 
+    
+}
+
+#main_nav img{   
+    margin-top: 3px;
+    margin-left: 5px;	
+}
+
+#main_nav ul > li{
+	display: inline-block;
+	text-align:center;
+    margin-right: 15px;
+}
+
+#quickLogin{
+	margin: 10px 10px 10px 10px;
+}
+
+#quickLogin >ul > li{
+	display: inline-block;
+	float:right;
+	margin-left:5px;;
+	font-size: 15px;
+	line-height: 1em;
+}
+
+a{
+	color: #3C6;
+	text-decoration:none;
+}
+
+#foot{
+	position:absolute;
+	bottom: 0;
+	width: 2000px;
+	height: 30px;
+	background-color:#000;
+	color:#F5F5F5;
+	font-size:21px;
+}

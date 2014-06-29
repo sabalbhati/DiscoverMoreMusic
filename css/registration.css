@@ -1,0 +1,67 @@
+/*
+* CSS Document 
+* registration.php
+* Created on: May 24th 2014
+* Modified on: May 24th 2014
+*
+*/
+#registration{
+	height: 515px;
+	width: 475px;
+	margin: 15% auto 0 auto;
+	background-color:#F5F5F5;
+}
+
+#registration>h2 {
+	text-align:center;
+	font-size: 32px;
+	margin-bottom: 10px;
+	font-weight:normal;
+}
+
+.field>input:not(#avatar){
+	width:375px;
+	display:block;
+	height:30px;
+	margin: 0 auto 12px auto;
+	font-size:18px;
+	
+}
+
+/*all labels on the form currently have the character a, hence why this selector works */
+label[for*="a"]{
+	margin-left:47px;
+	font-size: 18px;
+}
+
+#avatar{
+	height:25px;
+}
+
+#img_sample{
+	height:100px;
+	width:100px;
+	margin: 0 auto 0 auto;
+	background-color: #CCC;
+	margin-top:10px;
+	margin-bottom: 10px;
+	border: 1px inset #F5F5F5;
+	border-radius: 3px;
+}
+
+#sample_img{
+	height:100px;
+	width:100px;
+}
+
+#file_close{
+	vertical-align: middle;
+}
+
+.input_error{
+	background-color:#F30;
+}
+
+.input_valid{
+	background-color:#6C0;
+}

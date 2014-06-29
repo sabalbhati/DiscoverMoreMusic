@@ -1,0 +1,83 @@
+/* CSS Document */
+
+#accountAvatar{
+	height: 300px;
+	width: 300px;
+	background-color:#D0D7FB;
+	float:left;
+	margin-left:10px;
+}
+
+#accountAvatar img{
+    height:280px;
+    width:280px;
+    display:block;
+    margin: 10px auto 0 auto;
+}
+
+#miniPics{
+	float:left;
+	margin-left: 15px;
+}
+
+#miniPics li{
+	list-style-type: none;
+}
+
+#miniPics li img{
+	height:57px;
+	width:57px;
+}
+
+#userInfo{
+	float:left;
+	width:607px;
+	height:300px;
+	background-color:#D0D7FB;
+	margin-left:20px;
+	margin-bottom:100px;
+}
+
+#sub_menu{
+    clear:both;
+    width: 1020px;
+    height: 50px; 
+    margin: 0 auto 0 auto;
+    border-bottom: solid;
+    border-top: solid;
+    background-color: #8E9FFB;
+ 
+}
+
+#sub_menu a{
+    color:#FFF1CD;
+}
+
+#sub_menu ul{
+    text-align: center;
+}
+
+#sub_menu ul li{
+    display: inline-block;
+    margin-right: 2px;
+    line-height:3em;
+}
+
+#userInfo p ,#userInfo h2,#userInfo h3{
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+
+#track{
+	margin-top:30px;
+	clear:both;
+}
+
+#track div{
+    width: 95%;
+    height: 120px;
+    background-color:#8E9FFB;
+    margin: 0 auto 20px auto;
+    box-shadow: 3px 3px 2px #CCC;
+}
