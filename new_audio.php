@@ -51,11 +51,14 @@
 	    </section>
 	    <section>
 	        <label for= "copyright">Copyright: </label>
-	        <input type="text" name="copyright" id="copyright" value="" autocomplete="off">
+	        <select name="copyright">
+	        	<option value="1">Exclusive</option>
+	        	<option value="2"> Non-Exclusive</option>
+	        </select>
 	    </section>
 	    <section>
-	        <label for= "price">Price: </label>
-	        <input type="text" name="price" id="price" value="" autocomplete="off">
+	        <label for= "price">Price(usd): </label>
+	        <input type="number" name="price" id="price" value="20.00" min="$20.00" max="1000.00" autocomplete="off">
 	    </section>
 	    <section>
 	        <input type="submit" name="submit" id="submit" value="Add Track" autocomplete="off">
