@@ -2,10 +2,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>New Audio</title>
+<title>New Album</title>
 <link rel="stylesheet" type="text/css" href="css/base.css">
 <link rel="stylesheet" type=" text/css" href="css/index.css">
-<link rel="stylesheet" type=" text/css" href="css/new_audio.css">
+<link rel="stylesheet" type=" text/css" href="css/bundle_audio.css">
 <script src="js/jquery-1.11.1.min.js"></script>
 <script src="js/functions.js"></script>
 </head>
@@ -23,15 +23,11 @@
     exit();
 }
 ?>
-    <h2 id="new_audio_title">New Audio</h2>
-    <form method="post" action="new_audio_validation.php" id="new_audio" enctype="multipart/form-data">
+    <h2 id="bundle_audio_title">New Album</h2>
+    <form method="post" action="bundle_audio_validation.php" id="bundle_audio" enctype="multipart/form-data">
 	    <section>
-	        <label for= "audio_name">Title: </label>
-	        <input type="text" name="audio_name" id="audio_name" value="" autocomplete="off">
-	    </section>
-	    <section>
-	        <label for= "tempo">Tempo: </label>
-	        <input type="text" name="tempo" id="tempo" value="" autocomplete="off">
+	        <label for= "bundle_name"> Title: </label>
+	        <input type="text" name="bundle_name" id="bundle_name" value="" autocomplete="off">
 	    </section>
 	    <section>
 	        <label for= "description">Description: </label>
@@ -49,19 +45,28 @@
 				echo "</select>";
 	        ?>
 	    </section>
-	    <section>
-	        <label for= "copyright">Copyright: </label>
-	        <select name="copyright">
-	        	<option value="1">Exclusive</option>
-	        	<option value="2"> Non-Exclusive</option>
-	        </select>
+	     <section>
+	        <label for= "producer">Producer(s)</label>
+	        <input type="text" name="producer" id="producer" value="" autocomplete="off">
 	    </section>
 	    <section>
 	        <label for= "price">Price(USD): </label>
 	        <input type="number" name="price" id="price" value="20.00" min="$20.00" max="1000.00" autocomplete="off">
 	    </section>
+	     <section>
+	        <label for= "discount">Discount: </label>
+	        <input type="number" name="discount" id="discount" value="" autocomplete="off">
+	    </section>
+	     <section>
+	        <label for= "discount_length">Discount Length: </label>
+	        <input type="us-date" name="discount_length" id="discount_length" value="" autocomplete="off">
+	    </section>
 	    <section>
-	        <input type="submit" name="submit" id="submit" value="Add Track" autocomplete="off">
+	        <label for= "release_date">Release Date: </label>
+	        <input type="date" name="release_date" id="release_date" value="" autocomplete="off">
+	    </section>
+	    <section>
+	        <input type="submit" name="submit" id="submit" value="Add Bundle" autocomplete="off">
 	    </section>
     </form>
 </body>
