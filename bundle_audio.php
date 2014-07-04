@@ -71,12 +71,12 @@
 	    </section>
 	     <section>
 	        <label for= "discount">Discount(%): </label>
-	        <input type="number" name="discount" id="discount" value="" autocomplete="off" min='0' max='90'>
+	        <input type="number" name="discount" id="discount" value="" min='5' max='90'>
 	    </section>
 	 	<section>
-	        <label for= "discount_length">Discount Length: </label>
+	        <label for= "discount_placement">Discount Placement: </label>
 	        <?php
-	        	echo "<select name='discount_length' id='discount_length'>";
+	        	echo "<select name='discount_placement' id='discount_placement'>";
 	        	
 	        	while ($row = mysqli_fetch_array($result_promotion))
 				{	

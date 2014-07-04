@@ -1,19 +1,19 @@
 $(document).ready(function() {
-	$("#discount_length").hide();
-	$("label[for=discount_length]").hide();
+	$("#discount_placement").hide();
+	$("label[for=discount_placement]").hide();
 	$("#bundle_name").focus();
 
 	$("#discount").keyup(function(){
 		// if the user chooses to have discounts enable this dropdown
 		if ($(this).val() > 0 && $(this).val() <= 90) 
 		{
-			$("#discount_length").show(500);
-			$("label[for=discount_length]").show(500);
+			$("#discount_placement").show(500);
+			$("label[for=discount_placement]").show(500);
 		}
 		else
 		{
-			$("#discount_length").hide(500);
-			$("label[for=discount_length]").hide(500);
+			$("#discount_placement").hide(500);
+			$("label[for=discount_placement]").hide(500);
 		}
 	});
 
