@@ -6,8 +6,11 @@
 <link rel="stylesheet" type="text/css" href="css/base.css">
 <link rel="stylesheet" type=" text/css" href="css/index.css">
 <link rel="stylesheet" type=" text/css" href="css/bundle_audio.css">
-<script src="js/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="jQuery/jquery-ui.css">
+<script src="jQuery/jquery-1.11.1.min.js"></script>
+<script src="jQuery/jquery-ui.js"></script>
 <script src="js/functions.js"></script>
+<script src="js/date_picker.js"></script>
 </head>
 <body>
 <?php
