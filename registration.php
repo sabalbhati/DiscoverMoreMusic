@@ -4,8 +4,9 @@
 	<meta charset="UTF-8">
 	<title>DDM:Registration Form</title>
 	<link rel="stylesheet" type="text/css" href="css/base.css">
-    <link rel="stylesheet" type="text/css" href="css/registration.css">
-	<script src="js/jquery-1.11.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/registration.css">
+    <link rel="stylesheet" type="text/css" href="css/forms.css">
+	<script src="jQuery/jquery-1.11.1.min.js"></script>
 	<script src="js/functions.js"></script>
 	<script src="js/registration.js"></script>
 </head>

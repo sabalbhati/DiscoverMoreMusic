@@ -54,3 +54,19 @@ function validate_avatar(avatar) {
 	}
 	return error_flag;
 }
+
+function switch_class_to_error(obj) {
+	if ($(obj).hasClass("input_valid"))
+	{
+		$(obj).removeClass("input_valid");
+	}
+	$(obj).addClass("input_error");
+}
+
+function switch_class_to_valid(obj){
+	if ($(obj).hasClass("input_error"))
+	{
+		$(obj).removeClass("input_error");
+	}
+	$(obj).addClass("input_valid");
+}

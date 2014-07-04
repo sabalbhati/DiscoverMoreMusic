@@ -2,7 +2,9 @@
 * CSS Document 
 * registration.php
 * Created on: May 24th 2014
-* Modified on: May 24th 2014
+* Modified on: July 3rd 2014
+* Modification notes: Seperated input color(for validation) from registration form. This wat
+* input color css for validation can be applied to other forms.
 *
 */
 #registration{
@@ -56,12 +58,4 @@ label[for*="a"]{
 
 #file_close{
 	vertical-align: middle;
-}
-
-.input_error{
-	background-color:#F30;
-}
-
-.input_valid{
-	background-color:#6C0;
 }

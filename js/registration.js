@@ -15,7 +15,8 @@ $( document ).ready(function() {
 	});
 	
 	$("input").change(function(e) {
-		// forces proof that no errors exist
+		// Error initalized to true. Validation must prove errors don't exist on initalization
+		// This is to prevent errors from passing through accidentally
 		var error_flag = true;
 		
 		switch(e.target.id){
@@ -77,21 +78,7 @@ $( document ).ready(function() {
 	});
 });
 
-function switch_class_to_error(obj) {
-	if ($(obj).hasClass("input_valid"))
-	{
-		$(obj).removeClass("input_valid");
-	}
-	$(obj).addClass("input_error");
-}
 
-function switch_class_to_valid(obj){
-	if ($(obj).hasClass("input_error"))
-	{
-		$(obj).removeClass("input_error");
-	}
-	$(obj).addClass("input_valid");
-}
 
  /*
  * Shows image from the input file uploader in the

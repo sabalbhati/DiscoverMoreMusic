@@ -6,25 +6,38 @@
 <link rel="stylesheet" type="text/css" href="css/base.css">
 <link rel="stylesheet" type=" text/css" href="css/index.css">
 <link rel="stylesheet" type=" text/css" href="css/bundle_audio.css">
+<link rel="stylesheet" type=" text/css" href="css/forms.css">
 <link rel="stylesheet" type="text/css" href="jQuery/jquery-ui.css">
 <script src="jQuery/jquery-1.11.1.min.js"></script>
 <script src="jQuery/jquery-ui.js"></script>
 <script src="js/functions.js"></script>
+<script src="js/audio_bundle_validation.js"></script>
 <script src="js/date_picker.js"></script>
 </head>
 <body>
 <?php
-	
+	//connection to db and header inclusion
 	require("includes/header.php");
-	
 	require("includes/db_con.php");
-	$genre_query = "SELECT id, name FROM genres";
-	$result = $mysqli->query($genre_query);
 	
-	if (!$result) {
-    printf("Error: %s\n", mysqli_error($mysqli));
-    exit();
-}
+	//query for genre and promo dropdown
+	$genre_query = "SELECT id, name FROM genres";
+	$promo_query = "SELECT id, name FROM promotions WHERE id IN (2,4)";
+	
+	//result set fore promo and genre dropdown
+	$result_genre = $mysqli->query($genre_query);
+	$result_promotion = $mysqli->query($promo_query);
+	
+	// error messages for genre and promo drop down
+	if (!$result_promotion) {
+	    printf("Error: %s\n", mysqli_error($mysqli));
+	    exit();
+	}
+	
+	if (!$result_genre) {
+	    printf("Error: %s\n", mysqli_error($mysqli));
+	    exit();
+	}
 ?>
     <h2 id="bundle_audio_title">New Album</h2>
     <form method="post" action="bundle_audio_validation.php" id="bundle_audio" enctype="multipart/form-data">
@@ -34,14 +47,14 @@
 	    </section>
 	    <section>
 	        <label for= "description">Description: </label>
-	        <textarea rows="4" cols="30"></textarea>
+	        <textarea id="description" rows="4" cols="30"></textarea>
 	    </section>
 	    <section>
 	        <label for= "genre">Genre: </label>
 	        <?php
 	        	echo "<select name='genre'>";
 	        	
-	        	while ($row = mysqli_fetch_array($result))
+	        	while ($row = mysqli_fetch_array($result_genre))
 				{	 
 					echo "<option value'".$row['id']."'>" . $row['name'] . "</option>";
 				}
@@ -54,15 +67,23 @@
 	    </section>
 	    <section>
 	        <label for= "price">Price(USD): </label>
-	        <input type="number" name="price" id="price" value="20.00" min="$20.00" max="1000.00" autocomplete="off">
+	        <input type="number" name="price" id="price" value="20.00" min="20.00" max="1000.00" autocomplete="off">
 	    </section>
 	     <section>
-	        <label for= "discount">Discount: </label>
-	        <input type="number" name="discount" id="discount" value="" autocomplete="off">
+	        <label for= "discount">Discount(%): </label>
+	        <input type="number" name="discount" id="discount" value="" autocomplete="off" min='0' max='90'>
 	    </section>
-	     <section>
+	 	<section>
 	        <label for= "discount_length">Discount Length: </label>
-	        <input type="us-date" name="discount_length" id="discount_length" value="" autocomplete="off">
+	        <?php
+	        	echo "<select name='discount_length' id='discount_length'>";
+	        	
+	        	while ($row = mysqli_fetch_array($result_promotion))
+				{	
+					echo "<option value'".$row['id']."'>" . ucfirst(str_replace('single_', '', $row['name']));  "</option>";
+				}
+				echo "</select>";
+	        ?>
 	    </section>
 	    <section>
 	        <label for= "release_date">Release Date: </label>
