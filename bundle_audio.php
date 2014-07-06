@@ -47,23 +47,23 @@
 	    </section>
 	    <section>
 	        <label for= "description">Description: </label>
-	        <textarea id="description" rows="4" cols="30"></textarea>
+	        <textarea id="description" name="description" rows="4" cols="30"></textarea>
 	    </section>
 	    <section>
 	        <label for= "genre">Genre: </label>
 	        <?php
-	        	echo "<select name='genre'>";
+	        	echo "<select name=\"genre\">";
 	        	
 	        	while ($row = mysqli_fetch_array($result_genre))
-				{	 
-					echo "<option value'".$row['id']."'>" . $row['name'] . "</option>";
-				}
-				echo "</select>";
+						{	 
+							echo "<option value =\"".$row['id']."\">" . $row['name'] . "</option>";
+						}
+						echo "</select>";
 	        ?>
 	    </section>
 	     <section>
 	        <label for= "producer">Producer(s)</label>
-	        <input type="text" name="producer" id="producer" value="" autocomplete="off">
+	        <input type="text" name="producer" id="producer" autocomplete="off">
 	    </section>
 	    <section>
 	        <label for= "price">Price(USD): </label>
@@ -76,21 +76,24 @@
 	 	<section>
 	        <label for= "discount_placement">Discount Placement: </label>
 	        <?php
-	        	echo "<select name='discount_placement' id='discount_placement'>";
+	        	echo "<select name=\"discount_placement\" id=\"discount_placement\">";
 	        	
 	        	while ($row = mysqli_fetch_array($result_promotion))
 				{	
-					echo "<option value'".$row['id']."'>" . ucfirst(str_replace('single_', '', $row['name']));  "</option>";
+					echo "<option value =\"".$row['id']."\">" . ucfirst(str_replace('single_', '', $row['name'])) .  "</option>";
 				}
 				echo "</select>";
 	        ?>
 	    </section>
 	    <section>
 	        <label for= "release_date">Release Date: </label>
-	        <input type="date" name="release_date" id="release_date" value="" autocomplete="off">
+	        <input type="text" class="jq_date" name="release_date" id="release_date">
 	    </section>
 	    <section>
 	        <input type="submit" name="submit" id="submit" value="Add Bundle" autocomplete="off">
+	    </section>
+	    <section>
+	    	<input type="hidden" name="copyright" value="1">
 	    </section>
     </form>
 </body>

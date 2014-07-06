@@ -30,7 +30,6 @@
 	{	 
     
 ?>
-
 	<main id="wrapper">
         <section id="accountAvatar">
             <div>
@@ -65,7 +64,7 @@
         <section id="sub_menu">
             <ul>
                 <li> <a href="new_audio.php">[+] Add Track </a></li>
-                <li> <a href="#">[+] New Bundle </a></li>
+                <li> <a href="bundle_audio.php">[+] New Bundle </a></li>
                 <li> <a href="#">[+] Account Settings </a></li>
                 <li> <a href="#">[+] Balance </a></li>
                 <li> <a href="#">[+] Statistics </a></li>
