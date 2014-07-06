@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>New Album</title>
 <link rel="stylesheet" type="text/css" href="css/base.css">
-<link rel="stylesheet" type=" text/css" href="css/index.css">
 <link rel="stylesheet" type=" text/css" href="css/bundle_audio.css">
 <link rel="stylesheet" type=" text/css" href="css/forms.css">
 <link rel="stylesheet" type="text/css" href="jQuery/jquery-ui.css">
@@ -39,8 +38,8 @@
 	    exit();
 	}
 ?>
-    <h2 id="bundle_audio_title">New Album</h2>
-    <form method="post" action="bundle_audio_validation.php" id="bundle_audio" enctype="multipart/form-data">
+    <h2>New Album</h2>
+    <form method="post" action="bundle_audio_validation.php" id="bundle_audio" class="input_forms" enctype="multipart/form-data">
 	    <section>
 	        <label for= "bundle_name"> Title: </label>
 	        <input type="text" name="bundle_name" id="bundle_name" value="" autocomplete="off">
@@ -53,7 +52,7 @@
 	        <label for= "genre">Genre: </label>
 	        <?php
 	        	echo "<select name=\"genre\">";
-	        	
+	        	echo "<option value =\"\">--- Select Genre ---</option>";
 	        	while ($row = mysqli_fetch_array($result_genre))
 						{	 
 							echo "<option value =\"".$row['id']."\">" . $row['name'] . "</option>";
@@ -73,16 +72,16 @@
 	        <label for= "discount">Discount(%): </label>
 	        <input type="number" name="discount" id="discount" value="" min='5' max='90'>
 	    </section>
-	 	<section>
+	 		<section>
 	        <label for= "discount_placement">Discount Placement: </label>
 	        <?php
 	        	echo "<select name=\"discount_placement\" id=\"discount_placement\">";
 	        	
 	        	while ($row = mysqli_fetch_array($result_promotion))
-				{	
-					echo "<option value =\"".$row['id']."\">" . ucfirst(str_replace('single_', '', $row['name'])) .  "</option>";
-				}
-				echo "</select>";
+						{	
+							echo "<option value =\"".$row['id']."\">" . ucfirst(str_replace('single_', '', $row['name'])) .  "</option>";
+						}
+						echo "</select>";
 	        ?>
 	    </section>
 	    <section>

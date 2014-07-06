@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>New Audio</title>
 <link rel="stylesheet" type="text/css" href="css/base.css">
+<link rel="stylesheet" type=" text/css" href="css/forms.css">
 <link rel="stylesheet" type=" text/css" href="css/index.css">
 <link rel="stylesheet" type=" text/css" href="css/new_audio.css">
 <script src="js/jquery-1.11.1.min.js"></script>
@@ -23,8 +24,8 @@
     exit();
 }
 ?>
-    <h2 id="new_audio_title">New Audio</h2>
-    <form method="post" action="new_audio_validation.php" id="new_audio" enctype="multipart/form-data">
+    <h2>New Audio</h2>
+    <form method="post" action="new_audio_validation.php" id="new_audio" class="input_forms" enctype="multipart/form-data">
 	    <section>
 	        <label for= "audio_name">Title: </label>
 	        <input type="text" name="audio_name" id="audio_name" value="" autocomplete="off">

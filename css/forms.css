@@ -1,4 +1,35 @@
+.input_forms{
+	width: 475px;
+	margin: 0 auto 0 auto;
+	padding-top: 30px;
+	background-color:#F5F5F5;
+	border-radius:3px;
+}
 
+label{
+	margin-left:50px;
+	font-size: 21px;
+}
+
+h2 {
+	text-align:center;
+	font-size: 32px;
+	margin-bottom: 10px;
+	font-weight:normal;
+	text-align:center;
+	margin-top:56px;
+	font-size: 39px;
+}
+
+input:not([type=submit]), select{
+	border: 1px solid #AAA;
+	height:30px;
+	width: 365px;
+	font-size: 18px;
+	margin-left:50px;
+	margin-bottom: 10px;
+	display: block;
+}
 
 .input_error{
 	background-color:#F30;
@@ -6,4 +37,13 @@
 
 .input_valid{
 	background-color:#6C0;
+}
+
+input[type=submit]{
+	border: 1px solid #AAA;
+	height:45px;
+	width: 365px;
+	font-size: 24px;
+	margin: 30px 0 10px 50px;
+	display: block;
 }
