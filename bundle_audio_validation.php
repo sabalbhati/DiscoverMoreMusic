@@ -1,14 +1,12 @@
 <?php
 	session_start();
 ?>
-
 <?php
 	require_once("includes/db_con.php");
 	require_once("functions/ep_function.php");
 
 	if (isset($_POST['submit']))
 	{
-		echo var_dump($_POST);
 		//escape variables for security reasons
 		$bundle_name = $mysqli->real_escape_string($_POST['bundle_name']);
 		$description = $mysqli->real_escape_string($_POST['description']);
@@ -25,20 +23,24 @@
 		{
 			$query ='CALL bundle_add("'.
 							$bundle_name . '","' .
-							 $description . '","' . 
-							 $genre . '","' .
-							 $producer . '","' .
-							 $price . '","' .
-							 $discount . '","' .
-							 $discount_placement . '","' . 
-							 $release_date . '","' .
-							 $copy . '"' .
-							 ')';
+							$description . '","' . 
+							$genre . '","' .
+							$producer . '","' .
+							$price . '","' .
+							$discount . '","' .
+							$discount_placement . '","' . 
+							$release_date . '","' .
+							$copy . '"' .
+							')';
 			$result = $mysqli->query($query);
 			
 			if ($mysqli->error) 
 			{
     		printf("Errormessage: %s\n", $mysqli->error);
+			}
+			else
+			{
+				
 			}
   		 
      	

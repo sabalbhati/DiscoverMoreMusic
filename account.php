@@ -9,8 +9,9 @@
 	<link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/registration.css">
     <link rel="stylesheet" type="text/css" href="css/account.css">
-	<script src="js/jquery-1.11.1.min.js"></script>
+	<script src="jQuery/jquery-1.11.1.min.js"></script>
 	<script src="js/functions.js"></script>
+    <script src="js/account.js"></script>
 </head>
 
 <body>
@@ -21,14 +22,12 @@
     // gets the username that matches the record
 	$query = "SELECT username, avatar, bio, email, registered_on, account_type, modified_on, avatar_ext " .
 						   	"FROM members " .
-							"WHERE username = " . "'" .$username. "'";
-    
+							"WHERE username = " . "'" .$username. "'";    
     //queries the db 						
 	$result = $mysqli->query($query);
     
 	while ($row = mysqli_fetch_array($result))
-	{	 
-    
+	{	  
 ?>
 	<main id="wrapper">
         <section id="accountAvatar">
@@ -41,7 +40,6 @@
                 ?>
             </div>
         </section>
-        
         <section id="miniPics">
         	<ul>
                 <li><a href="#"><img src="images/image.jpg" /></a></li>
@@ -51,7 +49,6 @@
                 <li><a href="#"><img src="images/image.jpg" /></a></li>
             </ul>
         </section>
-        
         <section id="userInfo">
             <?php
                 echo "<h2>" . strtoupper($row['username']) . "</h2>";
@@ -73,19 +70,18 @@
                 <li> <a href="#">[+] Custom Work </a></li>
             </ul>
         </section>
+        <div id="show_content">
+            <ul>
+                <li><a href="#Audio" id="show_audio">Audio</a></li>
+                <li><a href="#Album" id="show_bundle">Album</a></li>
+            </ul>
+        </div>
         <section id="track">
-        	<div id="eachTrack">
-                <p> Audio Info</p>  
-                <p> Wav Length</p> 
-                <p> actions</p>       
-        	</div>
+            <!-- holds audio and bundle content dynamically -->   	
         </section>
-
     </main>
-
 <?php
     }
 ?>
-
 </body>
 </html>

@@ -3,6 +3,7 @@ $(document).ready(function() {
 	$("label[for=discount_placement]").hide();
 	$("#bundle_name").focus();
 
+	// on key up validate the form
 	$("#discount").keyup(function(){
 		// if the user chooses to have discounts enable this dropdown
 		if ($(this).val() > 0 && $(this).val() <= 90) 
@@ -17,13 +18,13 @@ $(document).ready(function() {
 		}
 	});
 
+	// css styling (error/valid) for text area
 	$("textarea").change(function(e){
 		var error_flag = true;
 		error_flag = string_validation($(this).val(), 0 ,140); 
 		if(error_flag == true)
 		{
 			switch_class_to_error(this);
-
 		}
 		else if(special_chars($(this).val()))//check for special character entries
 		{

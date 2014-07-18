@@ -13,7 +13,7 @@ if (isset($_POST['submit']))
 	$password = $mysqli->real_escape_string($_POST['password']);
 	
 	// gets the username that matches the record
-	$query = "SELECT username, password " .
+	$query = "SELECT id, username, password " .
 						   	"FROM members " .
 							"WHERE username = " . "'" .$username. "'";
 	
@@ -25,6 +25,7 @@ if (isset($_POST['submit']))
 		if(crypt($password, $row['password']) == $row['password'])
 		{
 			$_SESSION['user']= $username;
+			$_SESSION['id'] = $row['id'];
 			header('Location:account.php'); 
 		}
 		else

@@ -74,10 +74,26 @@
 	clear:both;
 }
 
+#show_content > ul{
+    width:220px;
+    margin: 15px auto 0 auto;
+}
+
+#show_content > ul >li{
+    display:inline-block;
+    width:60px;
+    text-align: center;
+}
+
 #track div{
     width: 95%;
     height: 120px;
     background-color:#8E9FFB;
     margin: 0 auto 20px auto;
     box-shadow: 3px 3px 2px #CCC;
+}
+.audio_form{
+    border:1px solid #000000;
+    margin-top:20px;
+    margin-left:20px;
 }

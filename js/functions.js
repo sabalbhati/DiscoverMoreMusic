@@ -40,6 +40,7 @@ function validate_email(email)
 	}
 }
 
+//checks to see if images have the extensions JPG, TIFF, PNG, or JPEG
 function validate_avatar(avatar) {
 	var error_flag = true;
 	
@@ -55,6 +56,7 @@ function validate_avatar(avatar) {
 	return error_flag;
 }
 
+//calls class that triggers css styling for error messages
 function switch_class_to_error(obj) {
 	if ($(obj).hasClass("input_valid"))
 	{
@@ -63,6 +65,7 @@ function switch_class_to_error(obj) {
 	$(obj).addClass("input_error");
 }
 
+//calls class that triggers css style for valid 
 function switch_class_to_valid(obj){
 	if ($(obj).hasClass("input_error"))
 	{
