@@ -1,6 +1,4 @@
-<?php
-   session_start();
-?>
+<?php session_start(); ?>
 <section id="quickLogin">
 	<?php
 		if(isset($_SESSION['user']))
@@ -20,7 +18,6 @@
 		}
 	?>
 </section>
-
 <nav id="main_nav">
     <table>
         <tr>
@@ -35,8 +32,8 @@
                     <li>Favorites</li>
                     <?php
                     	if(isset($_SESSION['user']))
-						{
-							echo "<li><a href=\"account.php\"> MyAccount</a></li>"; 
+                        {
+                            echo "<li><a href=\"account.php\"> MyAccount</a></li>"; 
 						}
 					?>	
                 </ul>	

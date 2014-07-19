@@ -9,14 +9,17 @@
 	<link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/registration.css">
     <link rel="stylesheet" type="text/css" href="css/account.css">
+    <link rel="stylesheet" type="text/css" href="css/player.css">
+    <link rel="stylesheet" type="text/css" href="css/color.css">
 	<script src="jQuery/jquery-1.11.1.min.js"></script>
 	<script src="js/functions.js"></script>
     <script src="js/account.js"></script>
 </head>
-
+    
 <body>
 <?php
 	require("includes/header.php");
+    require("includes/player.php");
     // gets the username that matches the record
     
     // gets the username that matches the record
@@ -29,7 +32,7 @@
 	while ($row = mysqli_fetch_array($result))
 	{	  
 ?>
-	<main id="wrapper">
+	<main id="wrapper" class="color-primary-0">
         <section id="accountAvatar">
             <div>
                 <?php
@@ -83,5 +86,6 @@
 <?php
     }
 ?>
+<?php require("includes/footer.php"); ?>
 </body>
 </html>

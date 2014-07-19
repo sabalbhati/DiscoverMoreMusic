@@ -10,27 +10,28 @@
 		$query = 'CALL get_user_audio(' . $username . ')';
 
 		$result = $mysqli->query($query);
-		if ($mysqli->error) { printf("Errormessage: %s\n", $mysqli->error); }
+		if ($mysqli->error) { 
+			printf("Errormessage: %s\n", $mysqli->error); 
+		}
 ?>
-		<div id="eachTrack">
-		<?php while ($row = mysqli_fetch_array($result)){ ?>
-			<ul>
-				<!-- audio details -->
-				<li><div>Title:</div> <div><?php echo $row['name'] ?></div> </li>
-				<li><div>Genre:</div> <div><?php echo $row['genre_id'] ?></div> </li>
-				<li><div>Price:</div> <div><?php echo $row['price'] ?></div> </li>
-				<li><div>Tempo:</div> <div><?php echo $row['tempo'] ?></div> </li>
+	<?php while ($row = mysqli_fetch_array($result)){ ?>
+		<div id="eachTrack" class="text-primary-1">
+			<!-- audio details -->
+			<div id="title"><?php echo $row['name'] ?> </div>
+				
+				<div id ="genre">Genre: <?php echo $row['genre_id'] ?> </div>
+				<div id="price">Price: $<?php echo $row['price'] ?> </div>
+				<div id="tempo">Tempo: <?php echo $row['tempo'] ?> </div>
 
 				<!-- audio album details -->
-				<li><div>Album Name:</div> <div><?php echo $row['album_name'] ?></div> </li>
-				<li><div>Audio Size:</div> <div><?php echo $row['audio_tempo'] ?></div> </li>
+				<div id="album">Album Name:<?php echo $row['album_name'] ?></div>
+				<div>Audio Size: <?php echo $row['tempo'] ?></div>
 
 				<!-- stats detail -->
-				<li><div>Plays:</div> <div><?php echo $row['plays'] ?></div> </li>
-				<li><div>Likes:</div> <div><?php echo $row['likes'] ?></div> </li>
-				<li><div>Rating:</div> <div><?php echo $row['rating'] ?></div> </li>
-			</ul> 
+				<div id="plays">Plays: <?php echo $row['plays'] ?></div>
+				<div id="likes">Likes: <?php echo $row['likes'] ?></div>
+				<div id="ratings">Rating: <?php echo $row['rating'] ?> </div>
 		<?php	} 
-	}?>
+	} ?>
 	
 </div>
