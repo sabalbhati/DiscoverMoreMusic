@@ -43,11 +43,14 @@
     margin: 0 auto 0 auto;
     border-bottom: solid;
     border-top: solid;
- 
 }
 
 #sub_menu a{
     color:#FFF1CD;
+}
+
+#show_audio, #show_bundle{
+    color: #FFF1CD;
 }
 
 #sub_menu ul{
@@ -60,7 +63,7 @@
     line-height:3em;
 }
 
-#userInfo p ,#userInfo h2,#userInfo h3{
+#userInfo > p ,#userInfo >h2,#userInfo >h3{
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 10px;
@@ -84,16 +87,27 @@
 
 #track > #eachTrack{
     width: 95%;
-    height: 120px;
+    height: 40px;
     margin: 0 auto 20px auto;
-    box-shadow: 3px 3px 2px #111;
+    padding-right:15px;
+    padding-left:15px;
+    line-height:2.2em;
+    border: 1px solid #699;
 }
 
-#eachTrack > #title{
-    margin:0px;
-    font-size: 28px;
-    color:#888;
+#genre, #price, #tempo, #album, #likes, #ratings, #plays, #size, #title{
+    float:left;
+    font-size: 15px;
+    padding: 3px 10px 3px 3px;
+    border-right: 3px outset #CCC;
+    text-align: center;
 }
+
+#play_button{
+    float:right;
+    padding-top:7px;
+}
+
 .audio_form{
     border:1px solid #000000;
     margin-top:20px;

@@ -18,8 +18,8 @@
 		}
 	?>
 </section>
-<nav id="main_nav">
-    <table>
+<nav id="main_nav" class="text-primary-1 color-primary-2">
+    <table> 
         <tr>
             <td><img src="images/logo2.png" alt="logo" /> </td>
             <td> 

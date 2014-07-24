@@ -16,7 +16,7 @@
     <script src="js/account.js"></script>
 </head>
     
-<body>
+<body class="color-primary-0">
 <?php
 	require("includes/header.php");
     require("includes/player.php");
@@ -32,7 +32,7 @@
 	while ($row = mysqli_fetch_array($result))
 	{	  
 ?>
-	<main id="wrapper" class="color-primary-0">
+	<main id="wrapper" class="color-primary-2">
         <section id="accountAvatar">
             <div>
                 <?php
@@ -43,7 +43,7 @@
                 ?>
             </div>
         </section>
-        <section id="miniPics">
+        <section id="miniPics" >
         	<ul>
                 <li><a href="#"><img src="images/image.jpg" /></a></li>
                 <li><a href="#"><img src="images/image.jpg" /></a></li>
@@ -52,16 +52,16 @@
                 <li><a href="#"><img src="images/image.jpg" /></a></li>
             </ul>
         </section>
-        <section id="userInfo">
+        <section id="userInfo" class="color-primary-2 text-primary-1">
             <?php
                 echo "<h2>" . strtoupper($row['username']) . "</h2>";
-                echo "<h3><strong>Fans: </strong></h3>";
-                echo "<p><strong> Email: </strong> " . $row['email'] . "</p>";
-                echo "<p><strong> Biography: </strong>" . $row['bio'] . "</p>";
-                echo "<p> <strong>Member Since: </strong> " . date("F, jS, Y", strtotime($row['registered_on'])) . "</p>";    
+                echo "<h3>Fans: </h3>";
+                echo "<p>Email: " . $row['email'] . "</p>";
+                echo "<p> Biography: " . $row['bio'] . "</p>";
+                echo "<p>Member Since: " . date("F, jS, Y", strtotime($row['registered_on'])) . "</p>";    
             ?>
         </section>
-        <section id="sub_menu">
+        <section id="sub_menu" class="color-primary-4 ">
             <ul>
                 <li> <a href="new_audio.php">[+] Add Track </a></li>
                 <li> <a href="bundle_audio.php">[+] New Bundle </a></li>
@@ -79,7 +79,7 @@
                 <li><a href="#Album" id="show_bundle">Album</a></li>
             </ul>
         </div>
-        <section id="track">
+        <section id="track" >
             <!-- holds audio and bundle content dynamically -->   	
         </section>
     </main>
