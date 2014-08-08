@@ -18,21 +18,16 @@
 		}
 	?>
 </section>
-<nav id="main_nav" class="text-primary-1 color-primary-2">
+<nav id="main_nav" class="color-primary-0">
     <table> 
         <tr>
             <td><img src="images/logo2.png" alt="logo" /> </td>
             <td> 
                 <ul>
-                    <li>Categories</li>
-                    <li>New</li>
-                    <li>Discover</li>
-                    <li>Random</li>
-                    <li>Trending</li>
-                    <li>Favorites</li>
+                    <li><a href="categories.php">Categories</a></li>
+                    <li><a href="index.php">Discover</a></li>
                     <?php
-                    	if(isset($_SESSION['user']))
-                        {
+                    	if(isset($_SESSION['user'])) {
                             echo "<li><a href=\"account.php\"> MyAccount</a></li>"; 
 						}
 					?>	

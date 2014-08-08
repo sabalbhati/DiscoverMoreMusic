@@ -27,6 +27,12 @@ function generate_salt(){
 	return $salt;
 }
 
+//uppercases first letter of each word 
+// removes underlines
+function pretify($string){
+	return ucwords(str_replace("_"," ",$string));
+}
+
 /**
 * params sValue:  The value to be checked 
 * params sLength: The valid length 

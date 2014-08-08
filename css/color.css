@@ -2,15 +2,17 @@
 
 /** Background colors **/
 
-.color-primary-0 { background-color: #784800 } /** wrapper */
-.color-primary-1 { background-color: #C09018 } 
-.color-primary-2 { background-color: #603000 } 
-.color-primary-3 { background-color: #C0A830 }
-.color-primary-4 { background-color: #301800 } 
-.color-primary-5 { background-color: #F38630 } 
+.color-primary-0 { background-color: #8486B6 } /*Blue-ish*/
+.color-primary-1 { background-color: #E8F6A7 } /*Yellow-ish*/
+.color-primary-2 { background-color: #FFBFAC } /*Pink-ish*/
+.color-primary-3 { background-color: #B1583E } /*Red-ish*/
+.color-primary-4 { background-color: #96AA3B } /*green-ish*/
+.color-primary-5 { background-color: #F1FACA } /*light white-ish*/
+.color-primary-6 { background-color: #B2D3D5 } /*light white-ish*/
 
 /** Text colors **/
-.text-primary-0 { color: #FFF1CD }	
-.text-primary-1 { color: #FFFFFF } 
-.text-primary-2 { color: #403A33 }
-.text-primary-3 { color: #0F0E0D }
+.text-primary-0 { color: #36397B } /*Dark blue-ish*/	
+.text-primary-1 { color: #FFFFFF } /*white*/
+.text-primary-2 { color: #96AA3B } /*yellow-green*/
+.text-primary-3 { color: #B1933E } /*Orange*/
+.text-primary-4 { color: #DE8C74 }  /*pink*/

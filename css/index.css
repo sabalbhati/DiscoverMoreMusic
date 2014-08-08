@@ -1,8 +1,8 @@
 /* CSS Document */
 
 .track{
-	width:800px;
-	height:200px;
+	width:1024px;
+	height:40px;
 	margin:0 auto 0 auto;
 	background-color:#FFF;
 	margin-top:20px;
@@ -10,20 +10,56 @@
 	box-shadow:0px 3px 4px #CCC;
 }
 
-.user_image{
-	height:180px;
-	width:180px;
-	margin:10px 0 0 10px;
+.track ul li{
+	display: inline-block;
 }
 
-.profile_avatar{
-	float:left;
+#audio_header{
+	width:1024px;
+	height:40px;
+	margin: 10px auto 0 auto;
 }
 
-.track_content{
-	float:left;
-	margin:10px 0 0 30px;
+#audio_header ul li{
+	display: inline-block;
 }
+
+#audio_header ul li:nth-child(1), /*title*/
+#audio_header ul li:nth-child(2), /*artist*/
+.track ul li:nth-child(1), /*title*/
+.track ul li:nth-child(2){/*artist*/
+	width:160px;
+	line-height: 2.5em;
+}
+
+#audio_header ul li:nth-child(4), /*album*/
+.track ul li:nth-child(4){ /*album*/
+	width:210px;
+	line-height: 2.5em;
+}
+
+#audio_header ul li:nth-child(3),/*genre*/
+.track ul li:nth-child(3){/*genre*/
+	width:80px;
+}
+
+#audio_header ul li:nth-child(5),/*length*/
+#audio_header ul li:nth-child(6),/*price*/
+#audio_header ul li:nth-child(7),/*plays*/
+#audio_header ul li:nth-child(8),/*likes*/
+#audio_header ul li:nth-child(9),/*ratings*/
+.track ul li:nth-child(5),/*length*/
+.track ul li:nth-child(6),/*price*/
+.track ul li:nth-child(7),/*plays*/
+.track ul li:nth-child(8),/*likes*/
+.track ul li:nth-child(9){/*ratings*/
+
+	width:60px;
+}
+
+
+
+
 
 
 

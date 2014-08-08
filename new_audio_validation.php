@@ -11,6 +11,31 @@ require_once("functions/ep_function.php");
 
 if(isset($_POST['add_new_audio']))
 {
+
+
+	// add validation for the form input
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	// validation for the content loaded 
+
 	//allowed extensions
 	$allowedExts = array("mp3", "acc");
 	$temp = explode(".", $_FILES["audiofile"]["name"]);
@@ -51,6 +76,9 @@ if(isset($_POST['add_new_audio']))
 				mkdir(UPLOAD_DIR, 0700);
 			}
 
+			$fileLocation = UPLOAD_DIR . $name;
+			print_r($fileLocation);
+			
 			// try to move the file to the proper directory
 			$success = move_uploaded_file($audioFile["tmp_name"], UPLOAD_DIR . $name);
 
@@ -60,9 +88,15 @@ if(isset($_POST['add_new_audio']))
 
 				exit;
 			}
+			else
+			{
+				// set permissions on the new file
+				chmod(UPLOAD_DIR . $name, 0644);
 
-			// set permissions on the new file
-			chmod(UPLOAD_DIR . $name, 0644);
+				require_once("includes/audio_insert.php");
+			}
+
+			
     } // no error found
 	} 
 	else // file is greater than 7 mb or type

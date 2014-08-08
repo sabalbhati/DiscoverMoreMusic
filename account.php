@@ -10,16 +10,18 @@
     <link rel="stylesheet" type="text/css" href="css/registration.css">
     <link rel="stylesheet" type="text/css" href="css/account.css">
     <link rel="stylesheet" type="text/css" href="css/player.css">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/color.css">
 	<script src="jQuery/jquery-1.11.1.min.js"></script>
 	<script src="js/functions.js"></script>
     <script src="js/account.js"></script>
 </head>
     
-<body class="color-primary-0">
+<body>
 <?php
 	require("includes/header.php");
-    require("includes/player.php");
+    //require("includes/player.php");
+    //require("includes/audio_header.php");
     // gets the username that matches the record
     
     // gets the username that matches the record
@@ -32,7 +34,7 @@
 	while ($row = mysqli_fetch_array($result))
 	{	  
 ?>
-	<main id="wrapper" class="color-primary-2">
+	<main id="wrapper" class="color-primary-6">
         <section id="accountAvatar">
             <div>
                 <?php
@@ -52,7 +54,7 @@
                 <li><a href="#"><img src="images/image.jpg" /></a></li>
             </ul>
         </section>
-        <section id="userInfo" class="color-primary-2 text-primary-1">
+        <section id="userInfo" class="text-primary-1">
             <?php
                 echo "<h2>" . strtoupper($row['username']) . "</h2>";
                 echo "<h3>Fans: </h3>";

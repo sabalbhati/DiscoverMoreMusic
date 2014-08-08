@@ -32,7 +32,6 @@
 			<div id="plays">Plays: <?php echo $row['plays'] ?></div>
 			<div id="likes">Likes: <?php echo $row['likes'] ?></div>
 			<div id="ratings">Rating: <?php echo $row['rating'] ?> </div>
-			<div id="play_button"><img src="images/play_small.png">
+			<div id="play_button"><img src="images/play_small.png"></div>
 		<?php	} 
 	} ?>
-</div>
