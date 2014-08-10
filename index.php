@@ -1,20 +1,20 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>DMM Login</title>
-<link rel="stylesheet" type="text/css" href="css/color.css">
-<link rel="stylesheet" type="text/css" href="css/base.css">
-<link rel="stylesheet" type="	text/css" href="css/index.css">
-<script src="js/jquery-1.11.1.min.js"></script>
-<script src="js/functions.js"></script>
-</head>
+	<meta charset="UTF-8">
+	<title>DMM Login</title>
+	<link rel="stylesheet" type="text/css" href="css/color.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="	text/css" href="css/index.css">
+	<script src="jQuery/jquery-1.11.1.min.js"></script>
+	<script src="js/player.js"></script>
+	<script src="js/functions.js"></script>
+
 </head>
 
 <body>
 <?php
 	require("includes/header.php");
-  require("includes/player.php");
   require("functions/ep_function.php");
 ?>
 	<main id="wrapper">
@@ -41,24 +41,26 @@
 			<section class="track">
 				<!-- audio details -->
 				<ul>
-					<li><?php echo $row['title'] ?> </li>
+					<li><?php echo pretify($row['title']) ?> </li>
 					<li><?php echo $row['username'] ?> </li>
 					<li><?php echo $row['genre'] ?> </li>
-					<li><?php echo pretify($row['album name']) ?> </li>
-					<li> </li>
+					<li>3:05</li>
 					<li><?php echo '$' . $row['price'] ?> </li>
 					<li><?php echo $row['play count'] ?> </li>
 					<li><?php echo $row['likes'] ?> </li>	
 					<li><?php echo $row['rating'] ?> </li>
+					<li><img src="images/up_arrow.png" /></li>
+					<li><img src="images/cart.png" /></li>
+					<li><img src="images/heart.png" /></li>
+					<li><img src="images/star.png" /></li>
+					<li><img src="images/play_small.png" /></li>
 				</ul>
 			</section>
 			<?php	} 
 		} ?> 
     	</section>
     </main>
-<?php
-	require("includes/footer.php");
-?>
+		<?php require("includes/footer.php"); ?>
 </body>
 
 </html>

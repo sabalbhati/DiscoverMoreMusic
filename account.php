@@ -4,7 +4,7 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8" >
 	<title>DDM:Registration Form</title>
 	<link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/registration.css">

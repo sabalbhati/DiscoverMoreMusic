@@ -22,42 +22,53 @@
 
 #audio_header ul li{
 	display: inline-block;
+	line-height: 2.5em;
+	font-weight: bold;
 }
+
 
 #audio_header ul li:nth-child(1), /*title*/
 #audio_header ul li:nth-child(2), /*artist*/
 .track ul li:nth-child(1), /*title*/
 .track ul li:nth-child(2){/*artist*/
-	width:160px;
-	line-height: 2.5em;
-}
-
-#audio_header ul li:nth-child(4), /*album*/
-.track ul li:nth-child(4){ /*album*/
-	width:210px;
-	line-height: 2.5em;
+	width:200px;
+	line-height: 1em;
+	padding-left: 10px;
+	text-align:center;
 }
 
 #audio_header ul li:nth-child(3),/*genre*/
 .track ul li:nth-child(3){/*genre*/
 	width:80px;
+	text-align:center;
 }
 
-#audio_header ul li:nth-child(5),/*length*/
-#audio_header ul li:nth-child(6),/*price*/
-#audio_header ul li:nth-child(7),/*plays*/
-#audio_header ul li:nth-child(8),/*likes*/
-#audio_header ul li:nth-child(9),/*ratings*/
-.track ul li:nth-child(5),/*length*/
-.track ul li:nth-child(6),/*price*/
-.track ul li:nth-child(7),/*plays*/
-.track ul li:nth-child(8),/*likes*/
-.track ul li:nth-child(9){/*ratings*/
-
-	width:60px;
+#audio_header ul li:nth-child(4), /*length*/
+.track ul li:nth-child(4){/*length*/
+	width:50px;
+	text-align:center;
 }
 
+#audio_header ul li:nth-child(5),/*price*/
+#audio_header ul li:nth-child(6),/*plays*/
+#audio_header ul li:nth-child(7),/*likes*/
+#audio_header ul li:nth-child(8),/*ratings*/
+#audio_header ul li:nth-child(9),/*popuarity*/
+.track ul li:nth-child(5),/*price*/
+.track ul li:nth-child(6),/*plays*/
+.track ul li:nth-child(7),/*likes*/
+.track ul li:nth-child(8),/*ratings*/
+.track ul li:nth-child(9),/*popularity*/
+.track ul li:nth-child(13){/*playbutton*/
+	width:55px;
+	text-align:center;
+}
 
+.track ul li:nth-child(9) > img{/*popularity*/
+	width:25px;
+	padding-left: 15px;
+	text-align:center;
+}
 
 
 

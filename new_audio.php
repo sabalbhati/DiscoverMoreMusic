@@ -20,15 +20,15 @@
 			
 			require("includes/db_con.php");
 			$genre_query = "SELECT id, name FROM genres";
-			$result = $mysqli->query($genre_query);
+			$genre_results = $mysqli->query($genre_query);
 			
-			if (!$result) {
+			if (!$genre_results) {
 		    printf("Error: %s\n", mysqli_error($mysqli));
 		    exit();
 		}
 		?>
 	<main id="wrapper"> 
-		    <h2 class="text-primary-1">New Audio</h2>
+		    <h2 class="text-primary-1">New Track</h2>
 		    <form method="post" action="new_audio_validation.php" id="new_audio" class="input_forms color-primary-1" enctype="multipart/form-data">
 			    <section>
 			        <label for= "audio_name" class="text-primary-1">Title: </label>
@@ -40,20 +40,20 @@
 			    </section>
 			    <section>
 			        <label for= "description" class="text-primary-1" >Description: </label>
-			        <textarea rows="4" cols="30" class="color-primary-3"></textarea>
+			        <textarea rows="4" cols="30" id ="description" name="description" class="color-primary-3"></textarea>
 			    </section>
 			    <section>
-			        <label for= "genre" class="text-primary-1">Genre: </label>
-			        <?php
-			        	echo "<select name='genre' class='color-primary-3'>";
-			        	
-			        	while ($row = mysqli_fetch_array($result))
-						{	 
-							echo "<option value'".$row['id']."'>" . $row['name'] . "</option>";
-						}
-						echo "</select>";
-			        ?>
-			    </section>
+		        <label for= "genre">Genre: </label>
+		        <?php
+		        	echo "<select name=\"genre\">";
+		        	echo "<option value =\"\">--- Select Genre ---</option>";
+		        	while ($row = mysqli_fetch_array($genre_results))
+							{	 
+								echo "<option value =\"".$row['id']."\">" . $row['name'] . "</option>";
+							}
+							echo "</select>";
+		        ?>
+	    		</section>
 			    <section>
 			        <label for= "copyright" class="text-primary-1">Copyright: </label>
 			        <select name="copyright" class="color-primary-3">

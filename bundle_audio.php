@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>New Album</title>
+<title>New Bundle</title>
 <link rel="stylesheet" type="text/css" href="css/base.css">
 <link rel="stylesheet" type=" text/css" href="css/bundle_audio.css">
 <link rel="stylesheet" type=" text/css" href="css/forms.css">
