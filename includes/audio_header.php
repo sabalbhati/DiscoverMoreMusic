@@ -1,4 +1,4 @@
-<nav id="audio_header" class="color-primary-2">
+<nav id="audio_header">
 	<ul>
 		<li>Title</li>
 		<li>Producer</li>

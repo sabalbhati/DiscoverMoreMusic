@@ -4,27 +4,33 @@
 		if(isset($_SESSION['user']))
 		{	 
 			$username = $_SESSION['user'];
-			echo "<ul> ".
-                    "<li><a href=\"includes/logout.php\">SignOut</a></li> " .
-                    "<li><h4>Hi ". $username . "!</h4></li> " .
-                "</ul";
+			echo "<ul>" .
+                    "<li id=\"quickLogin_first\" class=\"login_info\" > " .
+                        "Logo goes here" . "
+                    </li>" .
+                    "<li class= \"login_info\" id= \"quickLogin_second\"> " .
+                        "Hi " . $username . "!" .
+                    "</li> " .
+                    "<li class= \"login_info\" id=\"quickLogin_third\">" .
+                        "<a href=\"includes/logout.php\">SignOut</a>" .
+                    "</li> " .    
+                "</ul>";
 		} 
 		else
 		{
 		   echo "<ul>" .
-				    "<li><a href=\"login.php\">Login</a></li> " .
-				    "<li><a href=\"registration.php\"> Register</a></li> ".	
+				    "<li class=\"login_info\"><a href=\"login.php\">Login</a></li> " .
+				    "<li class= \"login_info\"><a href=\"registration.php\"> Register</a></li> " .	
 			    "</ul>";
 		}
 	?>
-</section>
-<nav id="main_nav" class="color-primary-0">
+</section>  
+<nav id="main_nav">
     <table> 
         <tr>
-            <td><img src="images/logo2.png" alt="logo" /> </td>
+            <td><!--<img src="images/ddm_logo.png" alt="logo" />-->  </td>
             <td> 
                 <ul>
-                    <li><a href="categories.php">Categories</a></li>
                     <li><a href="index.php">Discover</a></li>
                     <?php
                     	if(isset($_SESSION['user'])) {

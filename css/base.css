@@ -1,33 +1,54 @@
 /* CSS Document */
-@import url(http://fonts.googleapis.com/css?family=Arimo:400,700);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:600italic,400);
 *{
 	margin: 0px;
 	padding: 0px;
-	font-family: 'Arimo', sans-serif;
-	font-size:15px;
+	font-family: 'Open Sans', sans-serif;
 	letter-spacing:0.5px;
   border: 0px;
 }
 
+/* change login font color */
+.login_info a:link{
+	color: #333;
+}
+
+/* change login font color---*/
+
+.login_info{
+	margin-bottom: 5px;
+}
+
+#quickLogin_first,#quickLogin_second,#quickLogin_third{ 
+	width: 25%;
+	text-align: center;
+}
+
 body{
-	background-image:url('../images/background.png');
 	background-repeat: repeat;
+	background-color: #FFF;
 }
 
 #wrapper{
-	width: 1024px;
-	margin: 70px auto 20px auto;
+	width: 960px;
+	margin: 40px auto 20px auto;
 	padding: 10px 0 10px 0;
 }
 
 #main_nav{
-	clear:both;
-	height: 65px;
-	width: 100%;
+	position:relative;
+	top:60px;
+	width: 960px;
 	color:#F5F5F5;
 	font-size:21px;
-	line-height: 2.5em;
-	margin:0px;
+	line-height: 1.5em;
+	margin: 0 auto 0 auto;
+	border-top: 2px solid #333;
+	border-bottom: 2px solid #333;
+}
+
+#now_playing{
+	width:100%;
 }
 
 td:nth-child(1){
@@ -51,7 +72,16 @@ td:nth-child(2){
 }
 
 #quickLogin{
-	margin: 10px 10px 10px 10px;
+	width:100%;
+	height:30px;
+	top:0px;
+	left:0px;
+	background-color: #EFF;
+	margin:0px 0px 0px 0px;
+	padding:0px;
+	border-radius:3px;
+	box-shadow:0px 3px 4px #323;
+	position:fixed;
 }
 
 #quickLogin >ul > li{
@@ -67,7 +97,7 @@ a{
 }
 
 a:link{
-	color: #DFF;
+	color: #333;
 }
 
 #foot{
@@ -79,6 +109,12 @@ a:link{
 	font-size:21px;
 }
 
+#nowplaying p{
+	line-height:3.5em;
+	text-align:center;
+	color:#EEE;
+}
+
 #genre, #price, #tempo, #album, #likes, #ratings, #plays, #size, #title{
     float:left;
     font-size: 15px;
@@ -87,11 +123,11 @@ a:link{
     line-height: 2em;
 }
 
-footer{
+#nowplaying{
 	position:fixed;
-	width:100%;
-	height:40px;
-	bottom:0px;
+	width: 100%;
+	height: 50px;
+	bottom: 0px;
 }
 
 #player{
@@ -100,3 +136,82 @@ footer{
 	background-color: #8486B6;
 }
 
+audio{
+	width:500px;
+	margin:0 auto 0 auto;
+}
+
+#search{
+	width:400px;
+	margin:20px auto 0 auto;
+
+}
+
+#search input[type="text"]{
+	height:24px;
+	border: 1px solid #333;
+	font-size: 24px;
+	padding:2px;
+	width:300px;
+}
+
+#search input[type="button"]{
+	height:28px;
+	font-size: 21px;	
+	border: 1px solid #333;
+	margin-bottom: 12px;
+}
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.8);
+	z-index: 99999;
+	opacity:0;
+	-webkit-transition: opacity 400ms ease-in;
+	-moz-transition: opacity 400ms ease-in;
+	transition: opacity 400ms ease-in;
+	pointer-events: none;
+}
+
+.modalDialog:target {
+	opacity:1;
+	pointer-events: auto;
+}
+
+.modalDialog > div {
+	width: 400px;
+	position: relative;
+	margin: 10% auto;
+	padding: 5px 20px 13px 20px;
+	border-radius: 10px;
+	background: #fff;
+	background: -moz-linear-gradient(#fff, #999);
+	background: -webkit-linear-gradient(#fff, #999);
+	background: -o-linear-gradient(#fff, #999);
+}
+
+.close {
+	background: #606061;
+	color: #FFFFFF;
+	line-height: 25px;
+	position: absolute;
+	right: -12px;
+	text-align: center;
+	top: -10px;
+	width: 24px;
+	text-decoration: none;
+	font-weight: bold;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	-moz-box-shadow: 1px 1px 3px #000;
+	-webkit-box-shadow: 1px 1px 3px #000;
+	box-shadow: 1px 1px 3px #000;
+}
+
+.close:hover { background: #00d9ff; }
