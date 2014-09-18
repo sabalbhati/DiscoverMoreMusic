@@ -1,8 +1,19 @@
 /* CSS Document */
 
+#audio_containter{
+	float:left;
+	width:460px;
+}
+
+#promo{
+	float:right;
+	width:500px;
+}
+
 .track{
-	width:960px;
-	height:40px;
+	position:relative;
+	width:460px;
+	height:120px;
 	margin:0 auto 0 auto;
 	background-color:#EEF;
 	margin-top:20px;
@@ -13,65 +24,90 @@
 .track ul li{
 	color: #323234;
 	display: inline-block;
+	font-size:13px;
 }
 
-#audio_header{
-	width:960px;
-	height:40px;
-	margin: 10px auto 0 auto;
-	border-top: 2px solid #333;
-	border-bottom: 2px solid #333;
+.userimage > img{
+	height:90px;
+	max-width: 90px;
+	margin:3px;
+	border: solid #999 2px;
 }
 
-#audio_header ul li{
-	display: inline-block;
-	line-height: 2.5em;
+.username, .title, .genre, .playButton, 
+.likeButton, .cartButton, .starButton, .buttonContainer, .groupButton, .commentButton{
+	position: relative;
+}
+
+.username{
+	top:-100px;
+	left:120px;
+	font-size:18px;
 	font-weight: bold;
 }
 
-#audio_header ul li:nth-child(1), /*title*/
-#audio_header ul li:nth-child(2), /*artist*/
-.track ul li:nth-child(1), /*title*/
-.track ul li:nth-child(2){/*artist*/
-	width:200px;
-	line-height: 1em;
-	padding-left: 10px;
-	text-align:center;
+.title{
+	top:-100px;
+	left:120px;
 }
 
-#audio_header ul li:nth-child(3),/*genre*/
-.track ul li:nth-child(3){/*genre*/
-	width:80px;
-	text-align:center;
+.genre{
+	top:-100px;
+	left:120px;
+	color: #090;
+	font-size:12px;
 }
 
-#audio_header ul li:nth-child(4), /*length*/
-.track ul li:nth-child(4){/*length*/
-	width:50px;
-	text-align:center;
+.playButton{
+	top:40px;
+	left:-50px;
 }
 
-#audio_header ul li:nth-child(5),/*price*/
-#audio_header ul li:nth-child(6),/*plays*/
-#audio_header ul li:nth-child(7),/*likes*/
-#audio_header ul li:nth-child(8),/*ratings*/
-#audio_header ul li:nth-child(9),/*popuarity*/
-.track ul li:nth-child(5),/*price*/
-.track ul li:nth-child(6),/*plays*/
-.track ul li:nth-child(7),/*likes*/
-.track ul li:nth-child(8),/*ratings*/
-.track ul li:nth-child(9),/*popularity*/
-.track ul li:nth-child(13){/*playbutton*/
-	width:55px;
-	text-align:center;
+.buttonContainer{
+	background-color:#272729;
+	width:35px;
+	top:-169px;
+	left:410px;
+	height:112px;
+	border: 2px inset #314;
 }
 
-.track ul li:nth-child(9) > img{/*popularity*/
+
+.likeButton{
+	top:-12px;
+	left:5px;
 	width:25px;
-	padding-left: 15px;
-	text-align:center;
 }
 
+.cartButton{
+	top:-22px;
+	left:2px;
+	width:25px;
+}
+
+.commentButton{
+	top: -57px;
+	left: 5px;
+	z-index:7;
+}
+
+.groupButton{
+	top:-51px;
+	left:7px;
+	width:15px;
+}
+
+.groupButton img{
+	width:21px;
+	height:18px;
+}
+
+.starButton{
+	top:-98px;
+	left:5px;
+	width:25px;
+	z-index:6;
+}
 
 #ui_overlay{
 	width:275px;

@@ -1,11 +1,10 @@
-$(document).ready(function(){
+function audioLoader(){
   //target the play buttons
-  $(".track ul li #play_button").click(function(event){
-  	var $songName = $(this).parent().siblings(".track_title").text();
-  	var $user = $(this).parent().siblings(".user_name").text()
-    //alert($songName + " " + $user);
+  $(".playButton img").click(function(event){
+  	var $songName = $(this).parent().siblings(".title").text();
+  	var $user = $(this).parent().siblings(".username").text();
 
-  	var $audioPath = 'audio_temp' + '/' + $.trim($user) + '/' + $.trim($songName).replace(/\s+/g, '_').toLowerCase() + '.mp3';
+  	var $audioPath = 'audio_temp' + '/' + $.trim($user).toLowerCase() + '/' + $.trim($songName).replace(/\s+/g, '_').toLowerCase() + '.mp3';
     
     //creates a new src attribute for toggling play and pause image
 		var origsrc = $(this).attr('src');
@@ -25,5 +24,6 @@ $(document).ready(function(){
 		//alert("play" + $songName);
 		$(this).attr('src', src);
   });
-});
+}
+
 

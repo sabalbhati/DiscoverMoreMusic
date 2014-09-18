@@ -19,11 +19,6 @@
 	margin-bottom: 5px;
 }
 
-#quickLogin_first,#quickLogin_second,#quickLogin_third{ 
-	width: 25%;
-	text-align: center;
-}
-
 body{
 	background-repeat: repeat;
 	background-color: #FFF;
@@ -72,10 +67,11 @@ td:nth-child(2){
 }
 
 #quickLogin{
-	width:100%;
+	min-width:100vw;
 	height:30px;
 	top:0px;
 	left:0px;
+	z-index: 4;
 	background-color: #EFF;
 	margin:0px 0px 0px 0px;
 	padding:0px;
@@ -84,12 +80,25 @@ td:nth-child(2){
 	position:fixed;
 }
 
-#quickLogin >ul > li{
+#quickLogin ul {	
+	width:100vw;
+}
+
+#quickLogin > ul > li{
 	display: inline-block;
-	float:right;
-	margin-left:5px;;
 	font-size: 15px;
 	line-height: 1em;
+	min-width: 49vw;
+}
+
+#quickLogin > ul > li:nth-child(2)
+{
+	text-align:right;
+}
+
+#quickLogin > ul > li:nth-child(1)
+{
+	margin-top:5px;
 }
 
 a{
@@ -103,7 +112,7 @@ a:link{
 #foot{
 	margin: 0px;
 	bottom: 0;
-	width: 100%;
+	width: 100vw;
 	height: 80px;
 	color:#F5F5F5;
 	font-size:21px;

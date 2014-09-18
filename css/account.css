@@ -4,19 +4,22 @@
 	height: 300px;
 	width: 300px;
 	float:left;
-	margin-left:10px;
+    margin: 50px auto 10px auto;
+    border: solid #999 2px;
+    background-color: #EEEEFF;
 }
 
 #accountAvatar img{
     height:280px;
-    width:280px;
+    max-width: 300px;
     display:block;
-    margin: 10px auto 0 auto;
+    margin: 0 auto 0 auto;
 }
 
 #miniPics{
 	float:left;
-	margin-left: 15px;
+    margin: 50px auto 0 15px;
+    background-color: #EEEEFF;
 }
 
 #miniPics li{
@@ -29,16 +32,18 @@
 }
 
 #userInfo{
+    border: solid #999 2px;
 	float:left;
-	width:607px;
+	width:560px;
 	height:300px;
-	margin-left:20px;
-	margin-bottom:100px;
+    background-color: #EEEEFF;
+    margin: 52px auto 100px 20px;
+    color: #333;
 }
 
 #sub_menu{
     clear:both;
-    width: 1020px;
+    width: 960px;
     height: 50px; 
     margin: 0 auto 0 auto;
     border-bottom: solid;

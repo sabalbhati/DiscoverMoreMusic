@@ -5,13 +5,11 @@
 		{	 
 			$username = $_SESSION['user'];
 			echo "<ul>" .
-                    "<li id=\"quickLogin_first\" class=\"login_info\" > " .
-                        "Logo goes here" . "
-                    </li>" .
-                    "<li class= \"login_info\" id= \"quickLogin_second\"> " .
-                        "Hi " . $username . "!" .
-                    "</li> " .
-                    "<li class= \"login_info\" id=\"quickLogin_third\">" .
+                    "<li> " .
+                        "<img src=\"images/logo3.png\" />" .
+                    "</li>" .
+                    "<li> " .
+                        "Hi " . $username . "! &nbsp;" .
                         "<a href=\"includes/logout.php\">SignOut</a>" .
                     "</li> " .    
                 "</ul>";
@@ -19,8 +17,11 @@
 		else
 		{
 		   echo "<ul>" .
-				    "<li class=\"login_info\"><a href=\"login.php\">Login</a></li> " .
-				    "<li class= \"login_info\"><a href=\"registration.php\"> Register</a></li> " .	
+                    "<li class= \"login_info\"></li> " .   
+				    "<li class=\"login_info\">" . 
+                        "<a href=\"registration.php\"> Register</a> &nbsp;" .
+                        "<a href=\"login.php\">Login</a>" .
+                    "</li> " .			    
 			    "</ul>";
 		}
 	?>

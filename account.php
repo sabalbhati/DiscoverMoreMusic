@@ -34,14 +34,14 @@
 	while ($row = mysqli_fetch_array($result))
 	{	  
 ?>
-	<main id="wrapper" class="color-primary-6">
+	<main id="wrapper">
         <section id="accountAvatar">
             <div>
                 <?php
                     $avatar = $row['avatar'];
                     $extension = $row['avatar_ext'];
-                    //header("Content-type: image/gif");
-                    echo '<img src="data:image/'.$extension.';base64,' . $avatar . '" />';  
+                    
+                    echo "<img src=\"" . "image_temp/" . $username . "/image1." . $extension. "\" />";  
                 ?>
             </div>
         </section>

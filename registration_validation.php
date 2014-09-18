@@ -6,7 +6,6 @@ require_once("functions/ep_function.php");
 
 if(isset($_POST['register']))
 {
- 	//User input
 	$username = $mysqli->real_escape_string($_POST['username']);
 	$password = $mysqli->real_escape_string($_POST['password']);
 	$password_again = $mysqli->real_escape_string( $_POST['password_again']);
@@ -14,6 +13,7 @@ if(isset($_POST['register']))
 
 	string_validation($username, 8, 15);
 	
+	//if password matches the retype, encrypt the user's password
 	if ($password == $password_again)
 	{
 		//password encryption
@@ -21,12 +21,10 @@ if(isset($_POST['register']))
 	}
 	else
 	{
-		//wrong password
 		$error_flag++;
 	}
 	
 	//image storage
-	
 	//allowed extensions
 	$allowedExts = array("jpeg", "jpg", "png");
 	$temp = explode(".", $_FILES["avatar"]["name"]);
@@ -38,17 +36,24 @@ if(isset($_POST['register']))
 		&& ($_FILES["avatar"]["size"] < 1000000)
 		&& in_array($extension, $allowedExts)) 
 	{
+		//check if image has errors, no errors then move to a directory
+		//under the user's name 
 		if ($_FILES["avatar"]["error"] > 0) 
 		{
 			echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
   		} 
 		else
 		{
-        	move_uploaded_file($_FILES["avatar"]["tmp_name"], __DIR__."/temp/".$_FILES["avatar"]["name"]);
-        	$bin_string = file_get_contents(__DIR__."/temp/".$_FILES["avatar"]["name"]);
-        	$hex_string = base64_encode($bin_string);
-			unlink(__DIR__."/temp/".$_FILES["avatar"]["name"]);
-    	}
+			//define the audio upload directory(each user gets a folder of their own
+			define("UPLOAD_DIR", __DIR__ . "/image_temp/" . $username . "/");
+				
+			// if directory doesn't exist attempt to create it
+			if (!file_exists(UPLOAD_DIR))
+			{
+				mkdir(UPLOAD_DIR, 0700);
+			}
+    	move_uploaded_file($_FILES["avatar"]["tmp_name"], UPLOAD_DIR. "image1." . $extension);
+    }
 	}
 	else
 	{
@@ -63,9 +68,10 @@ else
 
 if ($error_flag == 0)
 {
+	$main_image = "image1";
 	$query = 	
-		"INSERT INTO members (username, password, avatar, email, registered_on) " .
-		"VALUES ('".$username . "' , '". $crypt_password."' , '" .$hex_string . "' , '" . $email ."' , ' ". date('Y-m-d') ."' )";
+		"INSERT INTO members (username, password, avatar, avatar_ext, email, registered_on) " .
+		"VALUES ('" . $username . "' , '" . $crypt_password . "' , '" . $main_image . "' , '" . $extension . "' , '" . $email ."' , ' ". date('Y-m-d') ."' )";
 	
 	$result = $mysqli->query($query);
 	

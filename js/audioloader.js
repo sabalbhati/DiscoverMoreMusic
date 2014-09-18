@@ -5,18 +5,19 @@ var source="";
 
 function loadSong(url){
   var request = new XMLHttpRequest();
-  request.open('GET',url,true);
-  request.responseType='arraybuffer';
+  request.open('GET', url ,true);
+   
+    request.responseType='arraybuffer';
 
-  //Decode asyncronously
-  request.onload = function(){
-    aContext.decodeAudioData(request.response, function(buffer){
-      var songBuffer = buffer;
+    //Decode asyncronously
+    request.onload = function(){
+      aContext.decodeAudioData(request.response, function(buffer){
+        var songBuffer = buffer;
 
-      playAudio(songBuffer);
-    }, function(){alert("Error");});
-  }
-  request.send();
+        playAudio(songBuffer);
+      }, function(){alert("Unable to load song");});
+    }
+    request.send();
 }
 
 function playAudio(buffer){
