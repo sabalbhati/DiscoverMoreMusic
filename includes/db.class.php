@@ -51,22 +51,12 @@ class db{
 
 	public function query($query)
 	{
-
-		$query = str_replace("}", "", $query);
-		$query = str_replace("{", $this->config->prefix, $query);
 		try
 		{
 			if ($this->config->connector == "mysqli")
 			{
-				$result = mysqli_query($this->connection, $this->stringEscape($query));
-				
-				if (!$result )
-			  {
-			  	die(mysql_error());
-			  }
+				$result = mysqli_query($this->connection, $query);
 			}
-
-
 			return $result;
 		}
 		catch(exception $e)
@@ -87,7 +77,6 @@ class db{
 					$connectionOpen = false;
 				}
 				return $connectionOpen;
-
 			}
 		}
 		catch(exception $e)
@@ -95,7 +84,6 @@ class db{
 			return $e;
 		}
 	}
-
 
 	public function hasRows($result)
 	{
@@ -164,14 +152,10 @@ class db{
 
 	public function stringEscape($string)
 	{
-	    if($this->config->connector == "mysql")
-	    {
-	        return mysql_real_escape_string($string);
-	    }
-	    elseif($this->config->connector == "mysqli")
-	    {
-	        return mysqli_real_escape_string($this->connection, $string);
-	    }
+    if($this->config->connector == "mysqli")
+    {
+        return mysqli_real_escape_string($this->connection, $string);
+    }
 	}
 
 }

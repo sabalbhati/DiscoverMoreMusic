@@ -32,41 +32,36 @@ if (isset($_POST['submit']))
 	
 	if($connectionStatus)
 	{
-		$query = $db->query(" SELECT " .
-			                  	"id, " .
-			                  	"username, " .
-			                  	"password " .
-							   				"FROM " .
-							   					"members " .
-												"WHERE " . 
-													"username = '" . $username . "'");
+		$query = "SELECT " .
+              	"id, " .
+              	"username, " .
+              	"password " .
+		   				"FROM " .
+		   					"members " .
+							"WHERE " . 
+								"username = '" . $username . "'";
 
 		//queries the db 	
-		$result =  $db->hasRows($query);	
-
+		$result =  $db->query($query);	
 
 		$rowsFound = $db->hasRows($result);
 
 		if($rowsFound)
 		{
-			$db->fetchArray($query);
-		}
-			
-
-		while ($row = $db->fetchArray($result))
-		{	 
-			if(crypt($password, $row['password']) == $row['password'])
-			{
-				echo "You are in Welcome";
-				$_SESSION['user']= $username;
-				$_SESSION['id'] = $row['id'];
-				header('Location:account.php'); 
-
-			}
-			else
-			{
-				echo "Invalid username/password";
-				session_destroy();
+			while ($row = $db->fetchArray($result))
+			{	 
+				if(crypt($password, $row['password']) == $row['password'])
+				{
+					echo "You are in Welcome";
+					$_SESSION['user']= $username;
+					$_SESSION['id'] = $row['id'];
+					header('Location:account.php'); 
+				}
+				else
+				{
+					echo "Invalid username/password";
+					session_destroy();
+				}
 			}
 		}
 	} //END if($connectionStatus) 

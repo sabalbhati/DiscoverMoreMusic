@@ -1,19 +1,21 @@
 <?php
-	require_once("includes/db_con.php");
+	include("includes/config.class.php");
+   include("includes/db.class.php");
+	$config = new config();
+	$db = new db($config);
+S
+	 $db->openConnection();
 	
 	// call procedure to get all user's audio
 	$query = 'CALL all_audiofiles()';
 
-	$result = $mysqli->query($query);
+	$result = $db->query($query);
 	
-	if ($mysqli->error) { printf("Errormessage: %s\n", $mysqli->error); }				
-	// get json data and encode it 
-	while ($row = mysqli_fetch_array($result))
-	{ 
+	while ($row = $db->fetchArray($result))
+	{ 	S
 		//holds all the audiofiles from the tables 
 		$all_audio[] = $row;	
 	}
 	$jsonAudiofile = "{\"audiofiles\":". json_encode($all_audio) . "}";
 		echo $jsonAudiofile;
-
 ?>	
