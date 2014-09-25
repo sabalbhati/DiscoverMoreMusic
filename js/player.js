@@ -10,18 +10,18 @@ function audioLoader(){
 		var origsrc = $(this).attr('src');
     var src = '';
 
-    if (origsrc == "images/play_small.png"){ 
+    if (origsrc == "images/play_button.png"){ 
       //plays track and shows pause button
-    	src = 'images/pause_small.png';
+    	src = 'images/stop_button.png';
       loadSong($audioPath);
+
       $("footer p").html("<p>Now Playing: " + $songName).hide().slideDown(1200);
     }
     else{ 	
       // pauses track and shows play button
-    	src = 'images/play_small.png';	
+    	src = 'images/play_button.png';	
       pauseAudio();
     }
-		//alert("play" + $songName);
 		$(this).attr('src', src);
   });
 }

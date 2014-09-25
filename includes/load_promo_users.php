@@ -1,0 +1,57 @@
+<?php
+	include("includes/config.class.php");
+  include("includes/db.class.php");
+
+  $config = new config();
+  $db = new db($config);
+  
+  $db->openConnection();
+
+  if ($db->pingServer())
+  {
+  	//get all users with a promo advert passing promotion id
+		$result = $db->query('CALL promo_users(1)');
+
+		// if there are rows promo users get their songs
+		if ($db->hasRows($result))
+		{
+			
+			$numRows=$db->countRows($result);
+
+			$promo_users = array();
+
+			//store promo users in array
+			$i = 0;
+			while($row = $db->fetchArray($result))
+			{	
+				$promo_users[$i][0] = $row['id'];
+				$promo_users[$i][1] = $row['username'];
+				$i++;
+			}	
+
+			//$db->closeConnection();
+			
+			// for the 3 users selected with advert fetch their songs
+			for($i=0; $i<$numRows; $i++)
+			{
+				$db->openConnection();
+				$query = "CALL promo_user_audio(" . $promo_users[$i][0] . ")" ;
+				$result = $db->query($query);
+				
+				$picture = "image_temp/" . $promo_users[$i][1] . "/image1.png";
+
+				echo "<section class= \"main_promo_user color-primary-0\">";
+				echo "<img src= '" . $picture . "'/>";
+				echo "<ul> ";
+
+				while($row = $db->fetchArray($result))
+				{
+					echo  "<li>" . $row['name'] . "</li>";
+				}
+				echo "</ul>";
+				echo "</section>";
+				
+			}
+		}
+  }
+?>

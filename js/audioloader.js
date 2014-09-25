@@ -15,7 +15,7 @@ function loadSong(url){
         var songBuffer = buffer;
 
         playAudio(songBuffer);
-      }, function(){alert("Unable to load song");});
+      }, function(){});
     }
     request.send();
 }

@@ -21,7 +21,7 @@
 	<main id="wrapper">
 
 		<?php
-			// call procedure to get all user's audio
+				// call procedure to get all user's audio
 				$query = 'CALL individual_audio()';
 		?>
 

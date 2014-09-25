@@ -78,8 +78,6 @@ $( document ).ready(function() {
 	});
 });
 
-
-
  /*
  * Shows image from the input file uploader in the
  * sample preview box

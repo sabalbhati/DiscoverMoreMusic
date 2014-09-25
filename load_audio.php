@@ -1,10 +1,9 @@
 <?php
 	include("includes/config.class.php");
-   include("includes/db.class.php");
+  include("includes/db.class.php");
 	$config = new config();
 	$db = new db($config);
-S
-	 $db->openConnection();
+	$db->openConnection();
 	
 	// call procedure to get all user's audio
 	$query = 'CALL all_audiofiles()';
@@ -12,7 +11,7 @@ S
 	$result = $db->query($query);
 	
 	while ($row = $db->fetchArray($result))
-	{ 	S
+	{ 
 		//holds all the audiofiles from the tables 
 		$all_audio[] = $row;	
 	}

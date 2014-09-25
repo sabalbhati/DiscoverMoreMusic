@@ -13,6 +13,10 @@ class db{
 
 	function __destruct(){}
 
+	/*
+	* purpose: opens a connection to the database
+	* return : void
+	*/
 	public function openConnection()
 	{
 		try
@@ -34,6 +38,9 @@ class db{
 		}
 	}
 
+	/*
+	* Closes the connection to the database
+	*/
 	public function closeConnection()
 	{
 		try
@@ -49,6 +56,10 @@ class db{
 		}
 	}
 
+	/*
+	* purpose: queries the database
+	* return: The result set
+	*/
 	public function query($query)
 	{
 		try
@@ -65,6 +76,10 @@ class db{
 		}
 	}
 
+	/*
+	* purpose: pings the database to see if a connection already exists
+	* return: (boolean) Yes: connection exists, No: There is no open connection
+	*/
 	public function pingServer()
 	{
 		$connectionOpen = true;
@@ -85,6 +100,10 @@ class db{
 		}
 	}
 
+	/*
+	*	purpose: checks to see if there are any results returned
+	* return: (boolean) Yes: rows <= 1, No rows > 1
+	*/
 	public function hasRows($result)
 	{
 		$returnedRows = false;
@@ -105,6 +124,10 @@ class db{
 		}
 	}
 
+	/*
+	* purpose: counts the number of rows returned by a query
+	* return: num of rows
+	*/
 	public function countRows($result)
 	{
 		try
@@ -112,6 +135,21 @@ class db{
 			if($this->config->connector=="mysqli")
 			{
 				return mysqli_num_rows($result);
+			}
+		}
+		catch(exception $e)
+		{
+			return $e;
+		}
+	}
+
+	public function rowsAffected()
+	{
+		try
+		{
+			if($this->config->connector=="mysqli")
+			{
+				return mysqli_affected_rows($this->connection);
 			}
 		}
 		catch(exception $e)
@@ -150,6 +188,10 @@ class db{
 		}
 	}
 
+	/*
+	* purpose: escapes any invalid characters
+	* result: string without invalid characters
+	*/
 	public function stringEscape($string)
 	{
     if($this->config->connector == "mysqli")

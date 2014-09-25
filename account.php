@@ -1,3 +1,10 @@
+<?php
+    require("includes/header.php");
+    include("includes/utility.class.php");
+    include("includes/config.class.php");
+    include("includes/db.class.php");
+?>
+
 <!doctype html>
 <html>
 <head>
@@ -16,11 +23,6 @@
     
 <body>
 <?php
-	require("includes/header.php");
-    include("includes/utility.class.php");
-    include("includes/config.class.php");
-    include("includes/db.class.php");
-
     $config = new config();
     //new database object
     $db = new db($config);
@@ -35,7 +37,7 @@
         // gets the username that matches the record
     	$query = "SELECT username, avatar, bio, email, registered_on, account_type, modified_on, avatar_ext " .
     						   	"FROM members " .
-    							"WHERE username = " . "'" .$username. "'";    
+    							"WHERE username = " . "'" . $username. "'";    
         //queries the db 						
     	$result = $db->query($query);
 

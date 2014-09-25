@@ -1,15 +1,28 @@
+<?php
+	session_start();
+?>
+
 <!-- Stores images into a dababase table converts to binary -->
 <?php
 $error_flag = 0;
-require_once("includes/db_con.php");
+require("includes/header.php");
+include("includes/utility.class.php");
+include("includes/config.class.php");
+include("includes/db.class.php");
+
 require_once("functions/ep_function.php");
+
+$config = new config();
+$db = new db($config);
+
+$db->openConnection();
 
 if(isset($_POST['register']))
 {
-	$username = $mysqli->real_escape_string($_POST['username']);
-	$password = $mysqli->real_escape_string($_POST['password']);
-	$password_again = $mysqli->real_escape_string( $_POST['password_again']);
-	$email = $mysqli->real_escape_string($_POST['email']);
+	$username = $db->stringEscape($_POST['username']);
+	$password = $db->stringEscape($_POST['password']);
+	$password_again = $db->stringEscape($_POST['password_again']);
+	$email = $db->stringEscape($_POST['email']);
 
 	string_validation($username, 8, 15);
 	
@@ -69,34 +82,16 @@ else
 if ($error_flag == 0)
 {
 	$main_image = "image1";
-	$query = 	
-		"INSERT INTO members (username, password, avatar, avatar_ext, email, registered_on) " .
-		"VALUES ('" . $username . "' , '" . $crypt_password . "' , '" . $main_image . "' , '" . $extension . "' , '" . $email ."' , ' ". date('Y-m-d') ."' )";
+	$query = 	"CALL add_user('" . $username . "', '" . $crypt_password . "' ,'" . $main_image . "' , '" . $extension . "' , '" . $email . "' , '". date('Y-m-d') ."' )";
 	
-	$result = $mysqli->query($query);
-	
-	if ($mysqli->error) 
+	if ($result = $db->query($query)) 
 	{
-		try 
-		{    
-			throw new Exception("MySQL error $mysqli->error <br> Query:<br> $query", $msqli->errno);    
-		} 
-		catch(Exception $e ) 
-		{
-			echo "Error No: ".$e->getCode(). " - ". $e->getMessage() . "<br >";
-			echo nl2br($e->getTraceAsString());
-		}
+		$_SESSION['user']= $username;
+		echo "<script> location.href=\"account.php\" </script>";
 	}
 	else
 	{
-		echo "Welcome ". $username;
+		echo "<script> location.href=\"#\" </script>";
 	}
 }
-else
-{
-	//form missing input 
-	//let user know which inputs are missing data, and or what's incorrect
-	echo "Form missing input";
-}
-
 ?>

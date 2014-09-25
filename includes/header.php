@@ -1,5 +1,5 @@
 <?php session_start(); ?>
-<section id="quickLogin">
+<section id="quickLogin" class="color-primary-3">
 	<?php
 		if(isset($_SESSION['user']))
 		{	 

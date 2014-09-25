@@ -17,7 +17,7 @@ $(document).ready(function(){
 				var buttonDiv = document.createElement('div');
 				buttonDiv.setAttribute('class', 'buttonContainer');
 
-				var playButton = imageButton('play_small','playButton', 'images','png');
+				var playButton = imageButton('play_button','playButton', 'images','png');
 				var likeButton = imageButton('heart','likeButton','images', 'png');
 				var cartButton = imageButton('cart','cartButton','images', 'png');
 				var starButton = imageButton('star','starButton','images', 'png');
@@ -25,9 +25,9 @@ $(document).ready(function(){
 				var commentButton = imageButton('comment','commentButton', 'images', 'png');
 
 				var trackAudioSection = document.createElement("section");
-				trackAudioSection.setAttribute("class","track");
+				trackAudioSection.setAttribute("class","track color-primary-0");
 
-				buttonDiv.appendChild(playButton);
+				
 				buttonDiv.appendChild(likeButton);
 				buttonDiv.appendChild(cartButton);
 				buttonDiv.appendChild(starButton);
@@ -38,6 +38,7 @@ $(document).ready(function(){
 				trackAudioSection.appendChild(username);
 				trackAudioSection.appendChild(trackTitle);
 				trackAudioSection.appendChild(trackGenre);
+				trackAudioSection.appendChild(playButton);
 				
 				trackAudioSection.appendChild(buttonDiv);
 
@@ -47,6 +48,7 @@ $(document).ready(function(){
 				//call to load audio attribute and funcionality
 				audioLoader();
 		}
+
 	});
 
 	//builds the user image for each audio track
