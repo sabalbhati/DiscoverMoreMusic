@@ -1,11 +1,11 @@
 function audioLoader(){
   //target the play buttons
-  $(".playButton img").click(function(event){
+  $(".playButton img").add(".smallPlayButton img").click(function(event){
   	var $songName = $(this).parent().siblings(".title").text();
   	var $user = $(this).parent().siblings(".username").text();
 
   	var $audioPath = 'audio_temp' + '/' + $.trim($user).toLowerCase() + '/' + $.trim($songName).replace(/\s+/g, '_').toLowerCase() + '.mp3';
-    
+    alert($audioPath);    
     //creates a new src attribute for toggling play and pause image
 		var origsrc = $(this).attr('src');
     var src = '';

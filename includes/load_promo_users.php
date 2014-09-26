@@ -42,15 +42,17 @@
 
 				echo "<section class= \"main_promo_user color-primary-0\">";
 				echo "<img src= '" . $picture . "'/>";
-				echo "<ul> ";
+				
 
 				while($row = $db->fetchArray($result))
 				{
-					echo  "<li>" . $row['name'] . "</li>";
+					$audioLocation = "audio_temp/". $promo_users[$i][1] . "/" . $row['name'] . "." . $row['extension'];
+					echo "<section>";
+					echo "<div class=\"smallPlayButton\"> <img src= \"images/play_button.png\"></div>";
+					echo  "<div class= \"" . $promo_users[$i][1] . "\" >" . $row['name'] . "</div>";
+					echo "</section>";
 				}
-				echo "</ul>";
-				echo "</section>";
-				
+					echo "</section>";
 			}
 		}
   }
