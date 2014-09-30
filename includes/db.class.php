@@ -27,7 +27,6 @@ class db{
 																					 $this->config->username, 
 																					 $this->config->password);
 				
-				
 				$this->selectdb = mysqli_select_db($this->connection, 
 																					 $this->config->database);
 			}

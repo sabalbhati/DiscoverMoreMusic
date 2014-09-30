@@ -15,9 +15,11 @@ function loadSong(url){
         var songBuffer = buffer;
 
         playAudio(songBuffer);
-      }, function(){alert("unable to load song")});
+      }, function(){ 
+          // if audio fails to play toggle (play to stop)
+        });
     }
-    request.send();
+  request.send();
 }
 
 function playAudio(buffer){

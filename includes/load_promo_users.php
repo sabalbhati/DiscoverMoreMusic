@@ -1,7 +1,4 @@
 <?php
-	include("includes/config.class.php");
-  include("includes/db.class.php");
-
   $config = new config();
   $db = new db($config);
   
@@ -26,6 +23,7 @@
 			{	
 				$promo_users[$i][0] = $row['id'];
 				$promo_users[$i][1] = $row['username'];
+				$promo_users[$i][2] = $row['bio'];
 				$i++;
 			}	
 
@@ -42,17 +40,18 @@
 
 				echo "<section class= \"main_promo_user color-primary-0\">";
 				echo "<img src= '" . $picture . "'/>";
-				
+				echo "<div class= \"bio\">". $promo_users[$i][2]  . "</div>";
 
 				while($row = $db->fetchArray($result))
 				{
 					$audioLocation = "audio_temp/". $promo_users[$i][1] . "/" . $row['name'] . "." . $row['extension'];
 					echo "<section>";
 					echo "<div class=\"smallPlayButton\"> <img src= \"images/play_button.png\"></div>";
-					echo  "<div class= \"" . $promo_users[$i][1] . "\" >" . $row['name'] . "</div>";
+
+					echo  "<div class= \"smallTitle\" >" . $row['name'] . "</div>";
 					echo "</section>";
 				}
-					echo "</section>";
+				echo "</section>";
 			}
 		}
   }

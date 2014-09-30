@@ -1,5 +1,4 @@
 $(document).ready(function(){
-
 	$.ajax({
 		url: "load_audio.php",
 		type: 'POST',
@@ -8,8 +7,7 @@ $(document).ready(function(){
 		data: $(this).serialize(),
 		success: function(data){
 			var audio_container = document.getElementById("audio_containter");
-			$(data.audiofiles).each(function(index,value){
-				
+			$(data.audiofiles).each(function(index, value){
 				var image = imageBuilder(value.username);
 				var username = textBuilder(value.username.toUpperCase(),'username');
 				var trackTitle = textBuilder(value.title, 'title');

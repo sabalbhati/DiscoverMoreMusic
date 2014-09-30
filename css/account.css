@@ -37,7 +37,7 @@
 	width:560px;
 	height:300px;
     background-color: #EEEEFF;
-    margin: 52px auto 100px 20px;
+    margin: 52px auto 50px 20px;
     color: #333;
 }
 
@@ -52,10 +52,6 @@
 
 #sub_menu a{
     color:#FFF1CD;
-}
-
-#show_audio, #show_bundle{
-    color: #FFF1CD;
 }
 
 #sub_menu ul{
@@ -74,38 +70,50 @@
     margin-bottom: 10px;
 }
 
-#track{
-	margin-top:30px;
-	clear:both;
+/********* track css **********/
+.eachTrack{
+    border-radius:3px;
+    box-shadow:0px 3px 4px #323;
 }
 
-#show_content > ul{
-    width:220px;
-    margin: 15px auto 0 auto;
+.eachTrack{
+    position:relative;
+    width:960px;
+    height:40px;
+    margin:15px auto 0 auto;
 }
 
-#show_content > ul >li{
+.eachTrack img{
+    height:20px;
+}
+
+.eachTrack{
+    color: #323234;
+    display: inline-block;
+    font-size:13px;
+}
+/********* track end css **********/
+
+#headerInfo{
+    border-top: 2px solid #B45848;
+}
+
+#headerInfo > li{
     display:inline-block;
-    width:60px;
-    text-align: center;
 }
 
-#track > #eachTrack{
-    width: 95%;
-    height: 40px;
-    margin: 0 auto 20px auto;
-    padding-right:15px;
-    padding-left:15px;
-    line-height:2.2em;
-    border: 1px solid #699;
-}
-
-#genre, #price, #tempo, #album, #likes, #ratings, #plays, #size, #title{
+#genre, #price, #tempo, #album, #likes, #ratings, #plays, #size, #title, #length, #headerInfo li{
     float:left;
     font-size: 15px;
-    padding: 3px 10px 3px 3px;
-    border-right: 3px outset #CCC;
+    padding: 7px 10px 3px 3px;
     text-align: center;
+    width:100px;
+    text-align: center;
+}
+
+#show_content li{
+    list-style-type:none;
+    display:inline-block;
 }
 
 #play_button{

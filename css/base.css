@@ -114,14 +114,6 @@ a:link{
 	color:#EEE;
 }
 
-#genre, #price, #tempo, #album, #likes, #ratings, #plays, #size, #title{
-    float:left;
-    font-size: 15px;
-    padding: 3px 50px 3px 3px;
-    text-align: center;
-    line-height: 2em;
-}
-
 footer{
 	margin-top:50px;
 
@@ -144,7 +136,7 @@ audio{
 	margin:20px auto 0 auto;
 }
 
-#search input[type="text"]{
+#search input[type="text"] {
 	height:29px;
 	border: 1px solid #333;
 	font-size: 24px;

@@ -8,16 +8,16 @@
 <!doctype html>
 <html>
 <head>
-	<meta charset="UTF-8" >
-	<title>DDM:Registration Form</title>
-	<link rel="stylesheet" type="text/css" href="css/base.css">
+    <meta charset="UTF-8" >
+    <title>DDM::My Account</title>
+    <link rel="stylesheet" type="text/css" href="css/base.css">
     <link rel="stylesheet" type="text/css" href="css/registration.css">
     <link rel="stylesheet" type="text/css" href="css/account.css">
     <link rel="stylesheet" type="text/css" href="css/player.css">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" type="text/css" href="css/color.css">
-	<script src="jQuery/jquery-1.11.1.min.js"></script>
-	<script src="js/functions.js"></script>
+    <script src="jQuery/jquery-1.11.1.min.js"></script>
+    <script src="js/functions.js"></script>
     <script src="js/account.js"></script>
 </head>
     
@@ -92,7 +92,6 @@
                     <div id="show_content">
                         <ul>
                             <li><a href="#Audio" id="show_audio">Audio</a></li>
-                            <li><a href="#Album" id="show_bundle">Album</a></li>
                         </ul>
                     </div>
                     <section id="track" >

@@ -19,6 +19,14 @@
 .main_promo_user > img{
 	width:150px;
 	margin: 5px;
+	float:left;
+	
+}
+
+.main_promo_user .bio{
+	width:230px;
+	margin:20px 0px 0px 10px;
+	float:left;
 }
 
 .smallPlayButton
@@ -75,11 +83,13 @@
 	left:120px;
 	font-size:18px;
 	font-weight: bold;
+	width:300px;
 }
 
 .title{
 	top:-100px;
 	left:120px;
+	width:200px;
 }
 
 .genre{
@@ -87,11 +97,13 @@
 	left:120px;
 	color: #090;
 	font-size:12px;
+	width:300;
 }
 
 .playButton{
 	top:-135px;
 	left:350px;
+	width:51px;
 }
 
 .buttonContainer{
