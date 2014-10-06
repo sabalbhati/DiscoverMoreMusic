@@ -5,4 +5,6 @@ $(document).ready(function(){
    $("#show_bundle").click(function(){
    	$("#track").load("member_bundles.php");
   });
+
+   $('#balance').modal_box();
 });

@@ -28,7 +28,7 @@
 		<section id="search">
 			<form> 
 				<input type="text" />
-				<input type="button" value="search" />
+				<input type="button" value="Search" />
 			</form>
 		</section>
 
@@ -38,10 +38,6 @@
 
 		<section id="promo">
 			<?php require("includes/load_promo_users.php"); ?>
-		</section>
-		<!-- modal dialog for user to change ratings -->
-  	<section id="openModal" class="modalDialog">
-			<?php require("includes/rating_modal.php"); ?>
 		</section>
   </main>
 		<?php require("includes/footer.php"); ?>

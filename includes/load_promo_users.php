@@ -29,19 +29,19 @@
 
 			//$db->closeConnection();
 			
-			// for the 3 users selected with advert fetch their songs
+			// fetch 3 promo songs for 3 selected promo user accounts
 			for($i=0; $i<$numRows; $i++)
 			{
 				$db->openConnection();
 				$query = "CALL promo_user_audio(" . $promo_users[$i][0] . ")" ;
 				$result = $db->query($query);
-				
+
+				//store picture directory
 				$picture = "image_temp/" . $promo_users[$i][1] . "/image1.png";
 
 				echo "<section class= \"main_promo_user color-primary-0\">";
 				echo "<img src= '" . $picture . "'/>";
-				echo "<div class= \"bio\">". $promo_users[$i][2]  . "</div>";
-
+				echo "<section id=\"promoSongSect\">";
 				while($row = $db->fetchArray($result))
 				{
 					$audioLocation = "audio_temp/". $promo_users[$i][1] . "/" . $row['name'] . "." . $row['extension'];
@@ -51,7 +51,10 @@
 					echo  "<div class= \"smallTitle\" >" . $row['name'] . "</div>";
 					echo "</section>";
 				}
-				echo "</section>";
+				echo "</section>"; // end song section
+				echo "<div class= \"bio\">". $promo_users[$i][2]  . "</div>";
+				
+				echo "</section>"; //end promo_user section
 			}
 		}
   }

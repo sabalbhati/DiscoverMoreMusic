@@ -11,6 +11,9 @@ class db{
 		$this->config = $config;
 	}
 
+	/**
+	* Destructor function
+	*/
 	function __destruct(){}
 
 	/*
@@ -24,11 +27,11 @@ class db{
 			if($this->config->connector == "mysqli")
 			{
 				$this->connection = mysqli_connect($this->config->hostname, 
-																					 $this->config->username, 
-																					 $this->config->password);
+														$this->config->username, 
+														$this->config->password);
 				
 				$this->selectdb = mysqli_select_db($this->connection, 
-																					 $this->config->database);
+														$this->config->database);
 			}
 		}
 		catch(exception $e)
@@ -142,6 +145,10 @@ class db{
 		}
 	}
 
+	/**
+	* used to check if anything has been added to the task
+	*  value > 1 true , value < 1 false
+	*/
 	public function rowsAffected()
 	{
 		try
@@ -190,13 +197,14 @@ class db{
 	/*
 	* purpose: escapes any invalid characters
 	* result: string without invalid characters
+	* to prevent cross-site scripting attacks(XSS)
 	*/
 	public function stringEscape($string)
 	{
-    if($this->config->connector == "mysqli")
-    {
-        return mysqli_real_escape_string($this->connection, $string);
-    }
+		if($this->config->connector == "mysqli")
+		{
+		    return mysqli_real_escape_string($this->connection, strip_tags($string));
+		}
 	}
 
 }
