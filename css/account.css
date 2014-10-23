@@ -7,6 +7,14 @@
     margin: 50px auto 10px auto;
     border: solid #999 2px;
     background-color: #EEEEFF;
+    position: relative;
+}
+
+.edit_avatar {
+    color:grey;
+    font-size: 15px;
+    margin-right:3px;
+    float: right;
 }
 
 #accountAvatar img{

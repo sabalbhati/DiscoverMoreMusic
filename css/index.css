@@ -1,5 +1,4 @@
 /* CSS Document */
-
 #audio_containter{
 	float:left;
 	width:460px;
@@ -16,6 +15,7 @@
 	width:200px;
 	margin-top:12px;
 }
+
 .main_promo_user{
 	width:400px;
 	height: 390px;
@@ -56,9 +56,9 @@
 }
 
 .track, .main_promo_user{
-	border-radius:3px;
 	border: solid 1px #AAA;
 }
+
 .track{
 	position:relative;
 	width:400px;
@@ -66,7 +66,7 @@
 	margin:0px auto 15px auto;
 }
 
-.track ul li{
+.track ul li {
 	color: #323234;
 	display: inline-block;
 	font-size:13px;
@@ -83,9 +83,11 @@
 	margin:6px;
 	background-color: #FFF;
 }
+
 .userimage > img{
 	height: 105px;
 	max-width: 100px;
+	margin: 0 auto 0 auto;
 }
 
 .username, .title, .genre, .track > .playButton, 
@@ -125,9 +127,9 @@
 .buttonContainer{
 	background-color:#272729;
 	width:35px;
-	top:-223px;
+	top:-238px;
 	left:410px;
-	height:112px;
+	height:118px;
 	border: 2px inset #314;
 }
 
@@ -173,8 +175,3 @@
 	margin: 0 auto 0 auto;
 	padding:15px;
 }
-
-
-
-
-

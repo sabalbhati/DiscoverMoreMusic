@@ -69,17 +69,7 @@ $(document).ready(function(){
 		trackInfoDiv.appendChild(infoText);
 		return trackInfoDiv;
 	}
-
-	// function imageButton(className){
-	// 	var playButtonDiv = document.createElement('div');
-	// 	playButtonDiv.setAttribute("class", "playButton");
-	// 	var playButton = document.createElement("img");
-	// 	playButton.src = "images/play_small.png";
-	// 	playButton.alt = className;
-	// 	playButtonDiv.appendChild(playButton);
-	// 	return playButtonDiv;
-	// }
-
+	
 	function imageButton(imageName,className, img_dir,extension)
 	{
 		var trackButtonDiv = document.createElement('div');

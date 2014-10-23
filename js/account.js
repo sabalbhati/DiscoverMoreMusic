@@ -7,4 +7,6 @@ $(document).ready(function(){
   });
 
    $('#balance').modal_box();
+
+   $("#change_avatar").modal_box();
 });

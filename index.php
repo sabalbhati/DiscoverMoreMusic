@@ -16,6 +16,7 @@
 	<script src="js/functions.js"></script>
 	<script src="js/player.js"></script>
 	<script src="js/audioloader.js"></script>	
+	<script src="js/search.js"></script>
 </head>
 
 <body>
@@ -24,18 +25,18 @@
 ?>
 	<main id="wrapper">
      
-		<!-- Search form for audio -->
+		<!-- Search functionality -->
 		<section id="search">
 			<form> 
-				<input type="text" />
+				<input type="text" id="filter" />
 				<input type="button" value="Search" />
 			</form>
 		</section>
 
 		<section id="audio_containter">
-		
+			<!--Users audio files-->
 		</section>
-
+		
 		<section id="promo">
 			<?php require("includes/load_promo_users.php"); ?>
 		</section>

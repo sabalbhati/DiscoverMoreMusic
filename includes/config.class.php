@@ -2,9 +2,9 @@
 
 class config {
 
-	protected $db_name =  "localhost";
+	protected $db_name =  "50.72.81.66";
 	protected $db_user = "ddm_admin";
-	protected $db_pword = "CrouchingTigress1101";
+	protected $db_pword = "Perimeter1";
 	protected $db_host = "DiscoverMoreMusic"; 
 
 	function __construct($hostname = NULL, 

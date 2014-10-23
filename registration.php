@@ -37,7 +37,7 @@
         </section>
         
          <section class="field">
-        	<label for ="avatar">Avatar: </label>
+        	<label for ="file">Avatar: </label>
            <input type="file" name="avatar" id="avatar" accept="image/*">
            <img id="file_close" src="images/close.png"  alt="close"/>
         </section>

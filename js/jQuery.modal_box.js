@@ -3,7 +3,6 @@
   $.fn.modal_box = function(prop){
 
     //default parameters
-
     var options = $.extend({
       height: "600",
       width: "300",
