@@ -37,9 +37,9 @@
 			<!--Users audio files-->
 		</section>
 		
-		<section id="promo">
+		<!-- <section id="promo">
 			<?php require("includes/load_promo_users.php"); ?>
-		</section>
+		</section> -->
   </main>
 		<?php require("includes/footer.php"); ?>
 </body>

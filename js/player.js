@@ -1,16 +1,17 @@
 function audioLoader(){
   //target the play buttons
-  $(".playButton > img, .smallPlayButton > img").click(function(event){
-  	var songName = $(this).parent().siblings(".title").text();
-  	var user = $(this).parent().siblings(".username").text();
+  $(".track").click(function(event){
+    alert("clicked");
+  // 	var songName = $(this).parent().siblings(".title").text();
+  // 	var user = $(this).parent().siblings(".username").text();
 
-  	var audioPath = 'audio_temp' + '/' + $.trim(user).toLowerCase() + '/' + $.trim(songName).replace(/\s+/g, '_').toLowerCase() + '.mp3';  
-    //creates a new src attribute for toggling play and pause image
-		var origsrc = $(this).attr('src');
+  // 	var audioPath = 'audio_temp' + '/' + $.trim(user).toLowerCase() + '/' + $.trim(songName).replace(/\s+/g, '_').toLowerCase() + '.mp3';  
+  //   //creates a new src attribute for toggling play and pause image
+		// var origsrc = $(this).attr('src');
 
-    var newSource = playToggle(origsrc, audioPath, songName, user);
+  //   var newSource = playToggle(origsrc, audioPath, songName, user);
 
-    $(this).attr('src', newSource);
+  //   $(this).attr('src', newSource);
   });
 }
 

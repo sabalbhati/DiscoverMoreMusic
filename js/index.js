@@ -12,42 +12,31 @@ $(document).ready(function(){
 				var username = textBuilder(value.username.toUpperCase(),'username');
 				var trackTitle = textBuilder(value.title, 'title');
 				var trackGenre = textBuilder(value.genre, 'genre');
-				var buttonDiv = document.createElement('div');
-				buttonDiv.setAttribute('class', 'buttonContainer');
-
-				var playButton = imageButton('play_button','playButton', 'images','png');
-				var likeButton = imageButton('heart','likeButton','images', 'png');
-				var cartButton = imageButton('cart','cartButton','images', 'png');
-				var starButton = imageButton('star','starButton','images', 'png');
-				var groupButton = imageButton('group', 'groupButton','images','png');
-				var commentButton = imageButton('comment','commentButton', 'images', 'png');
+				var overlay = divClassMaker("overlay") 
 
 				var trackAudioSection = document.createElement("section");
 				trackAudioSection.setAttribute("class","track color-primary-0");
 
-				
-				buttonDiv.appendChild(likeButton);
-				buttonDiv.appendChild(cartButton);
-				buttonDiv.appendChild(starButton);
-				buttonDiv.appendChild(groupButton);
-				buttonDiv.appendChild(commentButton);
-
-				trackAudioSection.appendChild(image);
 				trackAudioSection.appendChild(username);
+				trackAudioSection.appendChild(image);
 				trackAudioSection.appendChild(trackTitle);
-				trackAudioSection.appendChild(trackGenre);
-				trackAudioSection.appendChild(playButton);
 				
-				trackAudioSection.appendChild(buttonDiv);
-
-
 				audio_container.appendChild(trackAudioSection);
+
 			});
-				//call to load audio attribute and funcionality
+				//called after the elements have been created on the page
 				audioLoader();
 		}
 
 	});
+
+	function divClassMaker(className){
+		var overlay = document.createElement('div');
+		overlay.setAttribute("class", className);
+		return overlay;
+
+	}
+
 
 	//builds the user image for each audio track
 	function imageBuilder(memberName){
@@ -75,10 +64,6 @@ $(document).ready(function(){
 		var trackButtonDiv = document.createElement('div');
 		trackButtonDiv.setAttribute("class", className);
 
-		if (imageName == 'heart')
-		{
-			trackButtonDiv.setAttribute("class", className);
-		}
 
 		var trackButtonImage = document.createElement("img");
 		trackButtonImage.src = img_dir + "/" + imageName + "." + extension;

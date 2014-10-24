@@ -29,7 +29,10 @@
 	font-size:18px;
 }
 
-/*all labels on the form currently have the character a, hence why this selector works */
+/* 
+  all labels on the form currently have the character , 
+  hence why this selector works 
+ */
 label[for*="a"]{
 	margin-left:47px;
 	font-size: 18px;

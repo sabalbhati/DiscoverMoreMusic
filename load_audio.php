@@ -11,7 +11,6 @@
 	$query = 'CALL all_audiofiles()';
 
 	$result = $db->query($query);
-
 	while ($row = $db->fetchArray($result))
 	{ 
 		//holds all the audiofiles from the tables 
