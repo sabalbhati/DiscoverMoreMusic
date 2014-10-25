@@ -12,14 +12,16 @@ $(document).ready(function(){
 				var username = textBuilder(value.username.toUpperCase(),'username');
 				var trackTitle = textBuilder(value.title, 'title');
 				var trackGenre = textBuilder(value.genre, 'genre');
-				var overlay = divClassMaker("overlay") 
+				var overlay = divClassMaker("overlay"); 
 
 				var trackAudioSection = document.createElement("section");
 				trackAudioSection.setAttribute("class","track color-primary-0");
 
+				trackAudioSection.appendChild(overlay);
 				trackAudioSection.appendChild(username);
 				trackAudioSection.appendChild(image);
 				trackAudioSection.appendChild(trackTitle);
+
 				
 				audio_container.appendChild(trackAudioSection);
 
@@ -36,7 +38,6 @@ $(document).ready(function(){
 		return overlay;
 
 	}
-
 
 	//builds the user image for each audio track
 	function imageBuilder(memberName){

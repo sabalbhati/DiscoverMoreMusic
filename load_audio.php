@@ -1,5 +1,5 @@
 <?php
-	include("includes/config.class.php");
+  include("includes/config.class.php");
   include("includes/db.class.php");
 
 	$config = new config();

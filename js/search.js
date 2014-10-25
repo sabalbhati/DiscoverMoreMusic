@@ -1,5 +1,17 @@
 // get ready option
 $(document).ready(function(){
+  
+  $("#search").width(33);
+  $("#filter").width(0).css("border", "none");
+
+  //on load, minimize search bar
+  $("#searchButton").mouseover(function(){
+      var toggleWidth = $(this).parent().width() == 33 ? "405px" : "33px";
+      var toggleFilter = $("#filter").width() == 0 ? "370px" : "0px";
+      $(this).parent().animate({ width: toggleWidth});
+      $("#filter").animate({width: toggleFilter});
+  });
+
   // the search index
   $("#filter").keyup(function(){
 

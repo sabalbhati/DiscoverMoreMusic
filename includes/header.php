@@ -6,7 +6,7 @@
           $username = $_SESSION['user'];
           echo "<ul>" .
                   "<li> " .
-                    "<img src=\"#\" />" .
+                    "<img src=\"images/dmm_logo.png\" id=\"logo\"/>" .
                   "</li>" .
                   "<li> " .
                     "Hi " . $username . "!" .
@@ -19,7 +19,7 @@
         {
           echo  "<ul>" .
                   "<li class= \"login_info\"> " .
-                    "<img src=\"#\" />" .
+                    "<img src=\"images/dmm_logo.png\" id=\"logo\" />" .
                   "</li> " .   
                   "<li class=\"login_info\">" . 
                     "<a href=\"registration.php\"> Register</a> &nbsp;" .

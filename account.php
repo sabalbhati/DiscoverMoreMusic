@@ -84,7 +84,7 @@
           </section>
           <div id="show_content">
             <ul>
-              <li><a href="#Audio" id="show_audio">Audio</a></li>
+              <?php include("includes/member_files.php"); ?>
             </ul>
           </div>
           <section id="track" >

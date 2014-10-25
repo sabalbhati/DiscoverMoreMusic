@@ -1,5 +1,6 @@
 /* CSS Document */
 #audio_containter{
+	clear:both;
 }
 
 #promoSongSect{
@@ -50,6 +51,7 @@
 }
 
 .track{
+	position:relative;
 	float: left;
 	width:180px;
 	height:250px;
@@ -69,7 +71,18 @@
 }
 
 #search{
+	float:right;
 	margin-bottom: 40px;
+	border: solid #333 1px;
+	padding: 4px;
+}
+
+#filter{
+	float:right;
+}
+
+#searchButton{
+	float:right;
 }
 
 .userimage{
@@ -106,9 +119,13 @@
 	width:300;
 }
 
-#ui_overlay{
-	width:275px;
-	background-color: #FFF;
-	margin: 0 auto 0 auto;
-	padding:15px;
+.overlay{
+	position:absolute;
+	z-index:3;
+	width:inherit;
+	height:inherit;
+}
+
+.playing{
+	box-shadow: 1px 1px 10px 2px #B0E57C;
 }

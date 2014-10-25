@@ -6,7 +6,7 @@ var source="";
 function loadSong(url){
   var request = new XMLHttpRequest();
   request.open('GET', url ,true);
-   
+    
     request.responseType='arraybuffer';
 
     //Decode asyncronously

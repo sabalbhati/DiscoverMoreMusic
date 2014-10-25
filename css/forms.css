@@ -2,9 +2,10 @@
 	width: 475px;
 	margin: 0 auto 0 auto;
 	padding-top: 30px;
-	background-color:#F5F5F5;
+	background-color:#CC544F;
 	border-radius:3px;
 	padding:40px 10px 20px 10px;
+	color: #FFF;
 }
 
 label{

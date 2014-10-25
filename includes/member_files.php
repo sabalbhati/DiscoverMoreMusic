@@ -1,21 +1,11 @@
 <?php
-	session_start();
 
-	// check if the current session has an id
-	if(isset($_SESSION['id']))
-	{	 
-		$userid = $_SESSION['id'];
-		include("includes/config.class.php");
-		include("includes/db.class.php");
-		// include("includes/mp3file.class.php");
-
-		$config = new config();
-		$db = new db($config);
-
-		$db->openConnection();
-
+	$user_id = $_SESSION['id'];
 		// call procedure to get all user's audio
-		$query = 'CALL get_user_audio(' . $userid . ')';
+		$query = 'CALL get_user_audio(' . $user_id . ')';
+
+		$db = new db($config);
+    $db->openConnection();
 
 		$result = $db->query($query);	
 ?>
@@ -33,24 +23,23 @@
 	<!-- create container for audio file -->
 	<div class=" eachTrack text-primary-3 color-primary-5">
 		<!-- audio details -->
-	<?php
-		// $audiofile = "audio_temp/" . $row['username'] . "/" . $row['name'] . "." . $row['extension'];
+<?php
+	// $audiofile = "audio_temp/" . $row['username'] . "/" . $row['name'] . "." . $row['extension'];
 
-		// $mp3Info = new mp3file($audiofile);
-		// $mp3Data = $mp3Info->get_metadata();
-		// var_dump($mp3Data);
-		// $mp3Duration = $mp3Info->getDuration($mp3Data,0);
-		
-
-		// if ($mp3Data['Encoding'] == 'Unknown')
-		// 	echo "?";
-		// else if ($mp3Data['Encoding'] == 'VBR')
-		// 	print_r($mp3Data);
-		// else if ($mp3Data['Encoding']=='CBR')
-		// 	print_r($mp3Data);
-		// unset($mp3Data);
+	// $mp3Info = new mp3file($audiofile);
+	// $mp3Data = $mp3Info->get_metadata();
+	// var_dump($mp3Data);
+	// $mp3Duration = $mp3Info->getDuration($mp3Data,0);
 	
-		?>
+
+	// if ($mp3Data['Encoding'] == 'Unknown')
+	// 	echo "?";
+	// else if ($mp3Data['Encoding'] == 'VBR')
+	// 	print_r($mp3Data);
+	// else if ($mp3Data['Encoding']=='CBR')
+	// 	print_r($mp3Data);
+	// unset($mp3Data);
+?>
 
 		<div id="title"><?php echo $row['name'] ?> </div>
 		<div id ="genre"><?php echo $row['genre'] ?> </div>
@@ -66,6 +55,6 @@
 		<div id="likes"><?php echo $row['likes'] ?></div>
 		<div id="ratings"><?php echo $row['rating'] ?> </div>
 		<div id="play_button"><img src="images/play_button.png"></div>
-	<?php	} 
+<?php	
 	} 
 	?>

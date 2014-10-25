@@ -26,12 +26,10 @@
 	<main id="wrapper">
      
 		<!-- Search functionality -->
-		<section id="search">
-			<form> 
-				<input type="text" id="filter" />
-				<input type="button" value="Search" />
-			</form>
-		</section>
+		<form id="search">
+				<img src="images/magnifyglass" id="searchButton" /> 
+				<input type="text" id="filter" />		
+		</form>
 
 		<section id="audio_containter">
 			<!--Users audio files-->
