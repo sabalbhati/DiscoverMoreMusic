@@ -4,7 +4,7 @@ class config {
 
 	protected $db_name =  "localhost";
 	protected $db_user = "dmm_admin";
-	protected $db_pword = "Perimeter1";
+	protected $db_pword = "xxxxxxxxx";
 	protected $db_host = "DiscoverMoreMusic"; 
 
 	function __construct($hostname = NULL, 
